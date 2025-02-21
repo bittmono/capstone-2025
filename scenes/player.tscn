@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=3 uid="uid://b6ajc1hjlgdd8"]
 
-[ext_resource type="Script" path="res://scripts/player_test.gd" id="1_4est6"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_4est6"]
 [ext_resource type="Texture2D" uid="uid://dt7we0u752roe" path="res://assets/sprites (others)/hooded protagonist sheet.png" id="1_lb4p3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f48y4"]
@@ -147,9 +147,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g6yat"]
-radius = 5.35302
-height = 28.9063
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_um6o3"]
+size = Vector2(11.7767, 27.2281)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_4est6")
@@ -163,6 +162,6 @@ autoplay = "idle"
 frame_progress = 0.10721
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, -25)
+position = Vector2(1, -23.5)
 scale = Vector2(1.8681, 1.72616)
-shape = SubResource("CapsuleShape2D_g6yat")
+shape = SubResource("RectangleShape2D_um6o3")
