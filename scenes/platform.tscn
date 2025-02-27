@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://beg7pkwpqii2r"]
+
+[ext_resource type="Texture2D" uid="uid://bn306vp6fa4o6" path="res://assets/sprites (brackeys)/platforms.png" id="1_fq5f6"]
+[ext_resource type="Script" path="res://scripts/platform.gd" id="1_q76q3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sfqny"]
+size = Vector2(32, 9)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_vekxs"]
+a = Vector2(0, -20)
+b = Vector2(0, 11)
+
+[node name="Platform" type="RigidBody2D"]
+lock_rotation = true
+freeze = true
+script = ExtResource("1_q76q3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_fq5f6")
+region_enabled = true
+region_rect = Rect2(16.1457, 0, 31.8078, 9.90008)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_sfqny")
+
+[node name="TriggerArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerArea"]
+position = Vector2(-19, -10)
+shape = SubResource("SegmentShape2D_vekxs")
+
+[connection signal="body_entered" from="TriggerArea" to="." method="_on_trigger_area_body_entered"]
