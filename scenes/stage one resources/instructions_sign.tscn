@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwg4gxcmjgvce"]
+
+[ext_resource type="Texture2D" uid="uid://dl455aeeo0lgt" path="res://assets/sprites (brackeys)/world_tileset.png" id="1_7le65"]
+[ext_resource type="Script" path="res://scripts/instructions_sign.gd" id="1_g33p6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7cnyo"]
+size = Vector2(16, 14)
+
+[node name="Instructions Sign" type="Node2D"]
+visibility_layer = 2
+script = ExtResource("1_g33p6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_7le65")
+region_enabled = true
+region_rect = Rect2(128.504, 48.8532, 15.3512, 15.1989)
+
+[node name="TriggerArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerArea"]
+shape = SubResource("RectangleShape2D_7cnyo")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -21.0
+offset_top = -67.0
+offset_right = 19.0
+offset_bottom = -27.0
+
+[node name="Label" type="Label" parent="."]
+offset_left = -24.0
+offset_top = -55.0
+offset_right = 16.0
+offset_bottom = -32.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[connection signal="body_entered" from="TriggerArea" to="." method="_on_trigger_area_body_entered"]
+[connection signal="body_exited" from="TriggerArea" to="." method="_on_trigger_area_body_exited"]
