@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvdyg2sayqg8"]
+
+[ext_resource type="Texture2D" uid="uid://dl455aeeo0lgt" path="res://assets/sprites (brackeys)/world_tileset.png" id="1_3l6um"]
+[ext_resource type="Script" path="res://scripts/teleporting_sign.gd" id="1_q1exh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d3ky2"]
+size = Vector2(15, 15)
+
+[node name="Teleporting Sign" type="Node2D"]
+script = ExtResource("1_q1exh")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -33.0
+offset_top = -64.0
+offset_right = 7.0
+offset_bottom = -41.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_3l6um")
+region_enabled = true
+region_rect = Rect2(128.433, 49.7007, 15.6349, 14.9649)
+
+[node name="Trigger Area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger Area"]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_d3ky2")
+
+[connection signal="body_entered" from="Trigger Area" to="." method="_on_trigger_area_body_entered"]
+[connection signal="body_exited" from="Trigger Area" to="." method="_on_trigger_area_body_exited"]
