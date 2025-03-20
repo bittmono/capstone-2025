@@ -2,10 +2,27 @@ extends CharacterBody2D
 
 const SPEED = 150.0
 const JUMP_VELOCITY = -320.0
+var is_alive = true
+var has_played_death_animation = false
 
 @onready var animated_sprite = $AnimatedSprite2D
 
+func die():
+	print("player died")
+	is_alive = false
+
+func update_status():
+	if is_alive == false and not has_played_death_animation:
+		print("playing death animation")
+		animated_sprite.play("death")
+		has_played_death_animation = true
+
 func _physics_process(delta):
+	# Stops all movement if player is dead
+	if not is_alive:
+		update_status()
+		return
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -38,3 +55,5 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
 	move_and_slide()
+
+#-------------------------------------#
