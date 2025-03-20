@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkn7wfy8ekqlx"]
+
+[ext_resource type="Texture2D" uid="uid://cayklemintmd1" path="res://assets/sprites (others)/spikes-for-game.png" id="1_lcyea"]
+[ext_resource type="Script" path="res://scripts/falling_spike.gd" id="1_ym6tk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qjkah"]
+size = Vector2(14.1284, 12.2134)
+
+[node name="FallingSpike" type="RigidBody2D" groups=["Player"]]
+lock_rotation = true
+freeze = true
+script = ExtResource("1_ym6tk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 3.13613
+scale = Vector2(1, 1.00409)
+texture = ExtResource("1_lcyea")
+region_enabled = true
+region_rect = Rect2(12.6556, 43.2966, 16.518, 23.6998)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-29, 5)
+rotation = 3.14062
+polygon = PackedVector2Array(-37, 11, -29, -3, -21, 11)
+
+[node name="TriggerArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerArea" groups=["Player"]]
+position = Vector2(-0.445724, 28.2354)
+rotation = -3.1354
+scale = Vector2(3.18413, -2.25047)
+shape = SubResource("RectangleShape2D_qjkah")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="TriggerArea" to="." method="_on_trigger_area_body_entered"]
+[connection signal="body_shape_entered" from="TriggerArea" to="." method="_on_trigger_area_body_shape_entered"]

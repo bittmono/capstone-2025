@@ -2,8 +2,13 @@ extends CharacterBody2D
 
 const SPEED = 150.0
 const JUMP_VELOCITY = -320.0
+const RESPAWN_POINT: Vector2 = Vector2(-200, 0) 
 
 @onready var animated_sprite = $AnimatedSprite2D
+@export var start_position: Vector2
+
+func _ready(): 
+	start_position = global_position
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -38,3 +43,8 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
 	move_and_slide()
+
+
+func respawn(): 
+	global_position = RESPAWN_POINT #the players initial spawn point
+	modulate = Color.WHITE
