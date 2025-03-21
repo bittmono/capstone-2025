@@ -2,10 +2,13 @@ extends CharacterBody2D
 
 const SPEED = 150.0
 const JUMP_VELOCITY = -320.0
+const RESPAWN_POINT: Vector2 = Vector2(-200, 0) 
+
 var is_alive = true
 var has_played_death_animation = false
 
 @onready var animated_sprite = $AnimatedSprite2D
+@export var start_position: Vector2
 
 func die():
 	print("player died")
@@ -17,9 +20,12 @@ func update_status():
 		animated_sprite.play("death")
 		has_played_death_animation = true
 
+func _ready(): 
+	start_position = global_position
+
 func _physics_process(delta):
 	# Stops all movement if player is dead
-	if not is_alive:
+	if not is_alive: 
 		update_status()
 		return
 	
@@ -56,4 +62,7 @@ func _physics_process(delta):
 	
 	move_and_slide()
 
-#-------------------------------------#
+
+func respawn(): 
+	global_position = RESPAWN_POINT #the players initial spawn point
+	modulate = Color.WHITE
