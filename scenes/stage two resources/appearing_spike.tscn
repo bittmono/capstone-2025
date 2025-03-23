@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cayklemintmd1" path="res://assets/sprites (others)/spikes-for-game.png" id="1_iqrvt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8to2e"]
-size = Vector2(22, 42)
+size = Vector2(18, 54)
 
 [node name="AppearingSpike" type="Area2D" groups=["Player"]]
 script = ExtResource("1_d2n2q")
@@ -22,7 +22,7 @@ polygon = PackedVector2Array(-7, 5, 0, -8, 2, -8, 2, -7, 3, -7, 3, -5, 4, -5, 4,
 [node name="TriggerArea" type="Area2D" parent="." groups=["Player"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerArea"]
-position = Vector2(-20, -13)
+position = Vector2(-1, -19)
 shape = SubResource("RectangleShape2D_8to2e")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -17,9 +17,9 @@
 [ext_resource type="PackedScene" uid="uid://bwg4gxcmjgvce" path="res://scenes/stage one resources/instructions_sign.tscn" id="12_kt774"]
 [ext_resource type="PackedScene" uid="uid://cvdyg2sayqg8" path="res://scenes/stage one resources/teleporting_sign.tscn" id="13_kofy3"]
 [ext_resource type="PackedScene" uid="uid://daogq3q004kx5" path="res://scenes/stage one resources/death_mushroom.tscn" id="14_bqdra"]
-[ext_resource type="PackedScene" path="res://scenes/spike_basic.tscn" id="17_notjo"]
-[ext_resource type="PackedScene" path="res://scenes/falling_spike.tscn" id="18_8jspe"]
-[ext_resource type="PackedScene" path="res://scenes/appearing_spike.tscn" id="19_ea80r"]
+[ext_resource type="PackedScene" uid="uid://t46mlqw6mk3h" path="res://scenes/stage two resources/spike_basic.tscn" id="17_notjo"]
+[ext_resource type="PackedScene" uid="uid://bkn7wfy8ekqlx" path="res://scenes/stage two resources/falling_spike.tscn" id="18_8jspe"]
+[ext_resource type="PackedScene" uid="uid://bbeaqbo44o7gn" path="res://scenes/stage two resources/appearing_spike.tscn" id="19_ea80r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vjm5p"]
 texture = ExtResource("6_a0o3l")
@@ -427,7 +427,7 @@ position = Vector2(185, -848)
 position = Vector2(-120, -461)
 
 [node name="Player" parent="." instance=ExtResource("8_ixqjo")]
-position = Vector2(-185, -474)
+position = Vector2(-55, -1112)
 scale = Vector2(0.522512, 0.522512)
 collision_layer = 3
 collision_mask = 1
@@ -442,3 +442,21 @@ position_smoothing_enabled = true
 
 [node name="platformMoveLeft" parent="." instance=ExtResource("11_5iks1")]
 position = Vector2(41, -848)
+
+[node name="AppearingSpike" parent="." instance=ExtResource("19_ea80r")]
+position = Vector2(-8, -1085)
+
+[node name="AppearingSpike2" parent="." instance=ExtResource("19_ea80r")]
+position = Vector2(55, -1069)
+
+[node name="AppearingSpike3" parent="." instance=ExtResource("19_ea80r")]
+position = Vector2(216, -1085)
+
+[node name="FallingSpike" parent="." instance=ExtResource("18_8jspe")]
+position = Vector2(-183, -1185)
+
+[node name="AppearingSpike4" parent="." instance=ExtResource("19_ea80r")]
+position = Vector2(152, -765)
+
+[node name="AppearingSpike5" parent="." instance=ExtResource("19_ea80r")]
+position = Vector2(-119, -1102)

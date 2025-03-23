@@ -13,6 +13,7 @@ func _on_trigger_area_body_entered(body: Node2D) -> void:
 
 func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("Player"):
+		#body.die() plays death animation, but doesnt respawn properly
 		print("Spike hit the player!")
 		body.respawn()
 		reset_spike()

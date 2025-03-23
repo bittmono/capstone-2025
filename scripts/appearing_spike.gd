@@ -10,6 +10,7 @@ func _on_trigger_area_body_entered(body: Node2D) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
+		body.die()
 		print("Player hit the spike")
 		body.respawn()
 
