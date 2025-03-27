@@ -26,5 +26,8 @@ region_rect = Rect2(128.433, 49.7007, 15.6349, 14.9649)
 position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_d3ky2")
 
+[node name="Timer" type="Timer" parent="."]
+
 [connection signal="body_entered" from="Trigger Area" to="." method="_on_trigger_area_body_entered"]
 [connection signal="body_exited" from="Trigger Area" to="." method="_on_trigger_area_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
