@@ -1,12 +1,10 @@
-[gd_scene load_steps=30 format=4 uid="uid://bt3ln3k2vtwjr"]
+[gd_scene load_steps=28 format=4 uid="uid://bt3ln3k2vtwjr"]
 
 [ext_resource type="Texture2D" uid="uid://e4dj1j2ocag5" path="res://assets/backgrounds (clouds)/babyblue/1.png" id="1_1nwv5"]
 [ext_resource type="Texture2D" uid="uid://c7k85g0243nhl" path="res://assets/backgrounds (clouds)/light blue/1.png" id="1_85ohn"]
 [ext_resource type="Texture2D" uid="uid://dxkym5rh7dv5u" path="res://assets/backgrounds (clouds)/light blue/2.png" id="2_lsmmy"]
-[ext_resource type="Texture2D" uid="uid://cvlqfk33qnbsa" path="res://assets/backgrounds (clouds)/babyblue/3.png" id="3_d0on8"]
 [ext_resource type="Texture2D" uid="uid://b0whmndvmjia3" path="res://assets/backgrounds (clouds)/light blue/4.png" id="3_mb02e"]
 [ext_resource type="Texture2D" uid="uid://bqsjk3dwa4ald" path="res://assets/backgrounds (clouds)/babyblue/4.png" id="4_0r8mi"]
-[ext_resource type="Texture2D" uid="uid://bnud63s2yq48c" path="res://assets/backgrounds (clouds)/light blue/3.png" id="4_hm34h"]
 [ext_resource type="Texture2D" uid="uid://dki2mkxmw8teq" path="res://assets/backgrounds (clouds)/babyblue/5.png" id="5_xpi3r"]
 [ext_resource type="Texture2D" uid="uid://dl455aeeo0lgt" path="res://assets/sprites (brackeys)/world_tileset.png" id="6_a0o3l"]
 [ext_resource type="PackedScene" uid="uid://dymev1wewgm1d" path="res://scenes/killzone.tscn" id="7_5kf02"]
@@ -227,173 +225,11 @@ position = Vector2(2, 0)
 [node name="Background" type="ParallaxBackground" parent="."]
 follow_viewport_enabled = true
 
-[node name="dark blue - solid background" type="ParallaxLayer" parent="Background"]
-z_index = -3
-position = Vector2(-6, -870)
-scale = Vector2(1.01283, 2.72507)
-motion_scale = Vector2(0, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="Background/dark blue - solid background"]
-z_index = 2
-position = Vector2(-1.78814e-07, 89.9059)
-scale = Vector2(0.987332, 0.993292)
-texture = ExtResource("1_85ohn")
-
-[node name="dark blue - cloud 1" type="ParallaxLayer" parent="Background"]
-z_index = 2
-position = Vector2(-612, -57)
-scale = Vector2(0.962122, 0.986074)
-motion_scale = Vector2(0.1, 0.1)
-
-[node name="Sprite2D" type="Sprite2D" parent="Background/dark blue - cloud 1"]
-z_index = 1
-position = Vector2(628.692, -144.077)
-rotation = 3.13527
-scale = Vector2(1.05378, 0.880866)
-texture = ExtResource("2_lsmmy")
-
-[node name="dark blue - cloud 2" type="ParallaxLayer" parent="Background"]
-z_index = 2
-motion_scale = Vector2(0.2, 0.2)
-
-[node name="Sprite2D" type="Sprite2D" parent="Background/dark blue - cloud 2"]
-z_index = 3
-position = Vector2(0.999996, -510)
-scale = Vector2(1.14495, 1.12906)
-texture = ExtResource("2_lsmmy")
-region_enabled = true
-region_rect = Rect2(80, 0, 496, 324)
-
-[node name="dark blue - cloud 3" type="ParallaxLayer" parent="Background"]
-position = Vector2(4, 77)
-motion_scale = Vector2(0.2, 0.2)
-
-[node name="Sprite2D" type="Sprite2D" parent="Background/dark blue - cloud 3"]
-z_index = 2
-position = Vector2(-75, -726)
-rotation = 1.56818
-scale = Vector2(1.20605, 1.32017)
-texture = ExtResource("2_lsmmy")
-
-[node name="dark blue - cloud main 1" type="ParallaxLayer" parent="Background"]
-position = Vector2(-218, 83.7078)
-motion_scale = Vector2(0.2, 0.2)
-
-[node name="Sprite2D" type="Sprite2D" parent="Background/dark blue - cloud main 1"]
-z_index = 2
-position = Vector2(354.584, -893.708)
-rotation = -12.5631
-scale = Vector2(-0.830747, 0.793477)
-texture = ExtResource("3_mb02e")
-region_enabled = true
-region_rect = Rect2(136, 8, 376, 312)
-
-[node name="dark blue - cloud main 2" type="ParallaxLayer" parent="Background"]
-z_index = 1
-position = Vector2(38.5841, 83)
-rotation = -0.00949056
-motion_scale = Vector2(0.2, 0.2)
-
-[node name="Sprite2D" type="Sprite2D" parent="Background/dark blue - cloud main 2"]
-z_index = 3
-position = Vector2(116.375, -661.988)
-rotation = -15.6934
-scale = Vector2(0.833231, 0.793286)
-texture = ExtResource("3_mb02e")
-region_enabled = true
-region_rect = Rect2(120, -4, 392, 316)
-
-[node name="dark blue - cloud main 3" type="ParallaxLayer" parent="Background"]
-z_index = 1
-position = Vector2(38.5841, 83)
-rotation = -0.00949056
-motion_scale = Vector2(0.2, 0.2)
-
-[node name="Sprite2D" type="Sprite2D" parent="Background/dark blue - cloud main 3"]
-z_index = 3
-position = Vector2(-24.4364, -753.266)
-rotation = -15.7262
-scale = Vector2(0.62973, 0.790516)
-texture = ExtResource("3_mb02e")
-region_enabled = true
-region_rect = Rect2(232, 24, 168, 120)
-
-[node name="dark blue - detail 1" type="ParallaxLayer" parent="Background"]
-z_index = -1
-position = Vector2(-770, 230.489)
-motion_scale = Vector2(0, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="Background/dark blue - detail 1"]
-z_index = 2
-position = Vector2(893.866, -1043.43)
-rotation = -3.59131
-scale = Vector2(1.29144, -1.34266)
-texture = ExtResource("4_hm34h")
-region_enabled = true
-region_rect = Rect2(0, -4, 576, 324)
-
-[node name="dark blue - detail 2" type="ParallaxLayer" parent="Background"]
-z_index = -1
-position = Vector2(-421, 76)
-motion_scale = Vector2(0, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="Background/dark blue - detail 2"]
-z_index = 2
-position = Vector2(518.866, -898.943)
-rotation = -3.66858
-scale = Vector2(1.29144, -1.34266)
-texture = ExtResource("4_hm34h")
-region_enabled = true
-region_rect = Rect2(0, -4, 576, 324)
-
-[node name="blue - solid background" type="ParallaxLayer" parent="Background"]
-z_index = -3
-position = Vector2(-2, -43)
-scale = Vector2(1, 0.797389)
-motion_scale = Vector2(0, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="Background/blue - solid background"]
-position = Vector2(-5.00001, -139.831)
-scale = Vector2(1.00694, 2.14047)
-texture = ExtResource("1_1nwv5")
-
-[node name="blue - small clouds" type="ParallaxLayer" parent="Background"]
-position = Vector2(-4, -13)
-
-[node name="Sprite2D" type="Sprite2D" parent="Background/blue - small clouds"]
-position = Vector2(-6, -325)
-scale = Vector2(1.01389, 1.25617)
-texture = ExtResource("3_d0on8")
-
-[node name="blue - cloud 1" type="ParallaxLayer" parent="Background"]
-z_index = 2
-position = Vector2(-2, -43)
-scale = Vector2(1, 0.866939)
-motion_scale = Vector2(0.1, 0.1)
-
-[node name="Sprite2D" type="Sprite2D" parent="Background/blue - cloud 1"]
-position = Vector2(30.2202, -184.109)
-rotation = -1.56824
-scale = Vector2(1.20294, 1.52017)
-texture = ExtResource("4_0r8mi")
-region_enabled = true
-region_rect = Rect2(0, 0, 433, 324)
-
-[node name="blue - cloud 2" type="ParallaxLayer" parent="Background"]
-z_index = 1
-position = Vector2(-2, -43)
-motion_scale = Vector2(0.1, 0.1)
-
-[node name="Sprite2D" type="Sprite2D" parent="Background/blue - cloud 2"]
-z_index = 5
-position = Vector2(-9, 1)
-texture = ExtResource("5_xpi3r")
-
 [node name="orange - solid background" type="ParallaxLayer" parent="Background"]
-z_index = 2
-position = Vector2(49, -587)
-rotation = -1.57407
-scale = Vector2(0.942563, 1.03799)
+z_index = 3
+position = Vector2(-248, -859)
+rotation = 0.000136614
+scale = Vector2(0.641114, 1.32973)
 motion_scale = Vector2(0, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Background/orange - solid background"]
@@ -403,60 +239,61 @@ scale = Vector2(1.39882, 1.7008)
 texture = ExtResource("9_57uns")
 
 [node name="orange - orange cloud 1" type="ParallaxLayer" parent="Background"]
-z_index = 5
-position = Vector2(-177, -638)
-rotation = -3.15114
-scale = Vector2(-1.16294, 1.42437)
-motion_scale = Vector2(0.1, 0.1)
+z_index = 3
+position = Vector2(-133, -869)
+rotation = -0.00954732
+scale = Vector2(1.16294, -1.42437)
+motion_scale = Vector2(0.007, 0.007)
 
 [node name="Sprite2D" type="Sprite2D" parent="Background/orange - orange cloud 1"]
-position = Vector2(152.593, -132.316)
-scale = Vector2(0.882737, 0.744575)
+position = Vector2(107.741, -346.271)
+rotation = -0.00552974
+scale = Vector2(0.804571, 0.733941)
 texture = ExtResource("11_utgxi")
 
 [node name="orange - orange cloud 2" type="ParallaxLayer" parent="Background"]
-z_index = 4
-position = Vector2(445, 340)
+z_index = 3
+position = Vector2(428, 135)
 rotation = -0.0131109
-motion_scale = Vector2(0.1, 0.1)
+motion_scale = Vector2(0.007, 0.007)
 
 [node name="Sprite2D" type="Sprite2D" parent="Background/orange - orange cloud 2"]
-z_index = 5
-position = Vector2(-427.501, -1108.7)
-rotation = -6.27529
+position = Vector2(-424.107, -833.632)
+rotation = -6.26805
+scale = Vector2(0.931147, 1)
 texture = ExtResource("11_utgxi")
 
 [node name="orange - orange cloud layer 1" type="ParallaxLayer" parent="Background"]
-z_index = 5
-position = Vector2(581, -490)
+z_index = 3
+position = Vector2(617, -728)
 rotation = -3.12971
-motion_scale = Vector2(0.001, 0.001)
+motion_scale = Vector2(0.007, 0.007)
 
 [node name="Sprite2D" type="Sprite2D" parent="Background/orange - orange cloud layer 1"]
-position = Vector2(576.177, -53.1117)
+position = Vector2(622.951, -344.426)
+scale = Vector2(0.927835, 0.997715)
 texture = ExtResource("12_cs7et")
 
 [node name="orange - grey cloud 1" type="ParallaxLayer" parent="Background"]
-z_index = 2
-position = Vector2(-46, -893)
-rotation = 1.55792
-motion_scale = Vector2(0, 0)
+z_index = 3
+position = Vector2(94.9999, -741)
+rotation = 3.1122
+motion_scale = Vector2(0.03, 0.03)
 
 [node name="Sprite2D" type="Sprite2D" parent="Background/orange - grey cloud 1"]
-z_index = 5
-position = Vector2(51.8108, 92.6749)
+position = Vector2(80.8944, 164.055)
 rotation = -6.25373
 texture = ExtResource("10_agmoq")
 region_enabled = true
 region_rect = Rect2(176, 0, 400, 324)
 
 [node name="orange - small grey cloud 1" type="ParallaxLayer" parent="Background"]
-position = Vector2(1388, -371)
-rotation = -1.57407
-motion_scale = Vector2(0, 0)
+z_index = 3
+position = Vector2(-1636, -663)
+rotation = 1.02422
+motion_scale = Vector2(0.04, 0.04)
 
 [node name="Sprite2D" type="Sprite2D" parent="Background/orange - small grey cloud 1"]
-z_index = 7
 position = Vector2(656.192, -1584.86)
 rotation = 0.0031426
 scale = Vector2(1.03545, -0.941031)
@@ -465,16 +302,172 @@ region_enabled = true
 region_rect = Rect2(248, 152, 328, 172)
 
 [node name="orange - cloud 5" type="ParallaxLayer" parent="Background"]
-z_index = 4
-position = Vector2(739, -1731)
+z_index = 3
+position = Vector2(1163, -1624)
 rotation = 3.13504
-motion_scale = Vector2(0, 0)
+motion_scale = Vector2(0.06, 0.06)
 
 [node name="Sprite2D" type="Sprite2D" parent="Background/orange - cloud 5"]
-position = Vector2(651.465, -721.828)
+position = Vector2(1068.77, -725.012)
 rotation = -4.71691
 scale = Vector2(1.15683, 1.13717)
 texture = ExtResource("11_utgxi")
+region_enabled = true
+region_rect = Rect2(144, 0, 432, 320)
+
+[node name="orange - cloud 6" type="ParallaxLayer" parent="Background"]
+z_index = 3
+position = Vector2(-752, -2026)
+rotation = 1.56239
+motion_scale = Vector2(0.06, 0.06)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/orange - cloud 6"]
+position = Vector2(1068.77, -725.012)
+rotation = -4.71691
+scale = Vector2(1.15683, 1.13717)
+texture = ExtResource("11_utgxi")
+region_enabled = true
+region_rect = Rect2(144, 0, 432, 320)
+
+[node name="orange - cloud 7" type="ParallaxLayer" parent="Background"]
+z_index = 3
+position = Vector2(-1141, -74)
+rotation = -0.0131052
+motion_scale = Vector2(0.06, 0.06)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/orange - cloud 7"]
+position = Vector2(1068.77, -725.012)
+rotation = -4.71691
+scale = Vector2(1.15683, 1.13717)
+texture = ExtResource("11_utgxi")
+region_enabled = true
+region_rect = Rect2(144, 0, 432, 320)
+
+[node name="dark blue - solid background" type="ParallaxLayer" parent="Background"]
+z_index = 1
+position = Vector2(-1.00012, -1001)
+scale = Vector2(0.903416, 2.63542)
+motion_scale = Vector2(0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/dark blue - solid background"]
+position = Vector2(-1.78814e-07, 89.9059)
+scale = Vector2(0.987332, 0.993292)
+texture = ExtResource("1_85ohn")
+
+[node name="dark blue - cloud main 1" type="ParallaxLayer" parent="Background"]
+z_index = 2
+position = Vector2(-284, 395)
+scale = Vector2(0.927667, 0.988609)
+motion_scale = Vector2(0.06, 0.06)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/dark blue - cloud main 1"]
+position = Vector2(354.584, -893.708)
+rotation = -12.5631
+scale = Vector2(-0.830747, 0.793477)
+texture = ExtResource("3_mb02e")
+region_enabled = true
+region_rect = Rect2(136, 8, 376, 312)
+
+[node name="dark blue - cloud main 2" type="ParallaxLayer" parent="Background"]
+z_index = 3
+position = Vector2(-52.9999, 418)
+rotation = -0.00949056
+scale = Vector2(0.917788, 1.00354)
+motion_scale = Vector2(0.06, 0.06)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/dark blue - cloud main 2"]
+position = Vector2(116.375, -661.988)
+rotation = -15.6934
+scale = Vector2(0.833231, 0.793286)
+texture = ExtResource("3_mb02e")
+region_enabled = true
+region_rect = Rect2(120, -4, 392, 316)
+
+[node name="dark blue - cloud main 3" type="ParallaxLayer" parent="Background"]
+z_index = 2
+position = Vector2(-858, -393)
+rotation = 1.59763
+scale = Vector2(0.862831, 0.992942)
+motion_scale = Vector2(0.06, 0.06)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/dark blue - cloud main 3"]
+position = Vector2(-24.4364, -753.266)
+rotation = -15.7262
+scale = Vector2(0.62973, 0.790516)
+texture = ExtResource("3_mb02e")
+region_enabled = true
+region_rect = Rect2(232, 24, 168, 120)
+
+[node name="dark blue - cloud 1" type="ParallaxLayer" parent="Background"]
+z_index = 2
+position = Vector2(-538, 30)
+scale = Vector2(0.855932, 1.0464)
+motion_scale = Vector2(0.02, 0.02)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/dark blue - cloud 1"]
+position = Vector2(628.692, -144.077)
+rotation = 3.13527
+scale = Vector2(1.05378, 0.880866)
+texture = ExtResource("2_lsmmy")
+
+[node name="dark blue - cloud 2" type="ParallaxLayer" parent="Background"]
+z_index = 2
+position = Vector2(1.99994, 60)
+scale = Vector2(0.926776, 1)
+motion_scale = Vector2(0.02, 0.02)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/dark blue - cloud 2"]
+position = Vector2(0.999996, -510)
+scale = Vector2(1.14495, 1.12906)
+texture = ExtResource("2_lsmmy")
+region_enabled = true
+region_rect = Rect2(80, 0, 496, 324)
+
+[node name="dark blue - cloud 3" type="ParallaxLayer" parent="Background"]
+z_index = 1
+position = Vector2(28, 117)
+scale = Vector2(1, 0.923363)
+motion_scale = Vector2(0.02, 0.02)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/dark blue - cloud 3"]
+position = Vector2(-74, -724.525)
+rotation = 1.56818
+scale = Vector2(1.20605, 1.32017)
+texture = ExtResource("2_lsmmy")
+region_enabled = true
+region_rect = Rect2(0, 0, 408, 324)
+
+[node name="blue - solid background" type="ParallaxLayer" parent="Background"]
+position = Vector2(1.99999, -42)
+scale = Vector2(0.89756, 0.773177)
+motion_scale = Vector2(0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/blue - solid background"]
+position = Vector2(-5.00001, -139.831)
+scale = Vector2(1.00694, 2.14047)
+texture = ExtResource("1_1nwv5")
+
+[node name="blue - cloud 1" type="ParallaxLayer" parent="Background"]
+position = Vector2(2.00005, -42)
+scale = Vector2(0.905902, 0.846162)
+motion_scale = Vector2(0.05, 0.05)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/blue - cloud 1"]
+position = Vector2(30.2202, -184.109)
+rotation = -1.56824
+scale = Vector2(1.20294, 1.52017)
+texture = ExtResource("4_0r8mi")
+region_enabled = true
+region_rect = Rect2(0, 0, 433, 324)
+
+[node name="blue- cloud 2" type="ParallaxLayer" parent="Background"]
+position = Vector2(2.00005, -42)
+scale = Vector2(0.902861, 0.971809)
+motion_scale = Vector2(0.05, 0.05)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/blue- cloud 2"]
+position = Vector2(-9, 1)
+texture = ExtResource("5_xpi3r")
 
 [node name="Middle (TileMap)" type="TileMapLayer" parent="."]
 position = Vector2(65, 11)
@@ -511,9 +504,6 @@ position = Vector2(-200, 84)
 [node name="SpikeBasic" parent="Stage One - Obstacles" instance=ExtResource("17_notjo")]
 position = Vector2(114, -565)
 
-[node name="FallingSpike" parent="Stage One - Obstacles" instance=ExtResource("18_8jspe")]
-position = Vector2(185, -848)
-
 [node name="AppearingSpike" parent="Stage One - Obstacles" instance=ExtResource("19_ea80r")]
 position = Vector2(-120, -461)
 
@@ -532,7 +522,10 @@ position = Vector2(55, -1069)
 position = Vector2(216, -1085)
 
 [node name="FallingSpike" parent="Stage Two - Obstacles" instance=ExtResource("18_8jspe")]
-position = Vector2(-151, -1198)
+position = Vector2(185, -848)
+
+[node name="FallingSpike2" parent="Stage Two - Obstacles" instance=ExtResource("18_8jspe")]
+position = Vector2(-151, -1199)
 
 [node name="AppearingSpike4" parent="Stage Two - Obstacles" instance=ExtResource("19_ea80r")]
 position = Vector2(152, -765)
@@ -541,7 +534,7 @@ position = Vector2(152, -765)
 position = Vector2(-120, -1099)
 
 [node name="Player" parent="." instance=ExtResource("8_ixqjo")]
-position = Vector2(-151, -504)
+position = Vector2(-213, -1312)
 scale = Vector2(0.522512, 0.522512)
 collision_layer = 3
 collision_mask = 1
