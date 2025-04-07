@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbeaqbo44o7gn"]
+
+[ext_resource type="Script" path="res://scripts/appearing_spike.gd" id="1_d2n2q"]
+[ext_resource type="Texture2D" uid="uid://cayklemintmd1" path="res://assets/sprites (others)/spikes-for-game.png" id="1_iqrvt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8to2e"]
+size = Vector2(18, 54)
+
+[node name="AppearingSpike" type="Area2D" groups=["Player"]]
+script = ExtResource("1_d2n2q")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 3)
+texture = ExtResource("1_iqrvt")
+region_enabled = true
+region_rect = Rect2(11.3056, 41.746, 17.2227, 28.3737)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, 3)
+polygon = PackedVector2Array(-7, 5, 0, -8, 2, -8, 2, -7, 3, -7, 3, -5, 4, -5, 4, -3, 5, -3, 5, -2, 6, -2, 6, 0, 7, 0, 7, 2, 8, 2, 8, 4, 9, 4, 9, 5)
+
+[node name="TriggerArea" type="Area2D" parent="." groups=["Player"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerArea"]
+position = Vector2(-1, -19)
+shape = SubResource("RectangleShape2D_8to2e")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="TriggerArea" to="." method="_on_trigger_area_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

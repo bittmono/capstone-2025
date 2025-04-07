@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brlmt0rh1seqt"
-path="res://.godot/imported/2.png-a36429b931d7d43bfd3bc10dbf9e59f2.ctex"
+uid="uid://cayklemintmd1"
+path="res://.godot/imported/spikes-for-game.png-9cc2b6479e6b6a155a9b5cc78dba0e16.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/backgrounds (clouds)/orange (sunset)/2.png"
-dest_files=["res://.godot/imported/2.png-a36429b931d7d43bfd3bc10dbf9e59f2.ctex"]
+source_file="res://assets/sprites (others)/spikes-for-game.png"
+dest_files=["res://.godot/imported/spikes-for-game.png-9cc2b6479e6b6a155a9b5cc78dba0e16.ctex"]
 
 [params]
 

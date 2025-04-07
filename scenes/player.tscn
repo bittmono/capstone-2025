@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://b6ajc1hjlgdd8"]
+[gd_scene load_steps=39 format=3 uid="uid://b6ajc1hjlgdd8"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_4est6"]
 [ext_resource type="Texture2D" uid="uid://dt7we0u752roe" path="res://assets/sprites (others)/hooded protagonist sheet.png" id="1_lb4p3"]
@@ -107,6 +107,38 @@ region = Rect2(192, 96, 32, 32)
 atlas = ExtResource("1_lb4p3")
 region = Rect2(224, 96, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_eg800"]
+atlas = ExtResource("1_lb4p3")
+region = Rect2(0, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nho1v"]
+atlas = ExtResource("1_lb4p3")
+region = Rect2(32, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yttr4"]
+atlas = ExtResource("1_lb4p3")
+region = Rect2(64, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1oipx"]
+atlas = ExtResource("1_lb4p3")
+region = Rect2(96, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36nft"]
+atlas = ExtResource("1_lb4p3")
+region = Rect2(128, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0257"]
+atlas = ExtResource("1_lb4p3")
+region = Rect2(160, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t32wc"]
+atlas = ExtResource("1_lb4p3")
+region = Rect2(192, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wknkl"]
+atlas = ExtResource("1_lb4p3")
+region = Rect2(224, 192, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_1hm5o"]
 animations = [{
 "frames": [{
@@ -206,6 +238,35 @@ animations = [{
 "loop": true,
 "name": &"run",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eg800")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nho1v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yttr4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1oipx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36nft")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0257")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t32wc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wknkl")
+}],
+"loop": false,
+"name": &"vanish",
+"speed": 8.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_um6o3"]
