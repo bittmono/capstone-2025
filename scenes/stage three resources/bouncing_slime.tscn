@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=3 uid="uid://di3rlyyq0yn0r"]
+
+[ext_resource type="Script" path="res://scripts/bouncing_slime.gd" id="1_86fx3"]
+[ext_resource type="Texture2D" uid="uid://b1rba0aqv8w76" path="res://assets/sprites (brackeys)/slime_green.png" id="1_hy5hx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0qyg4"]
+atlas = ExtResource("1_hy5hx")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4f83o"]
+atlas = ExtResource("1_hy5hx")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_06kig"]
+atlas = ExtResource("1_hy5hx")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0xruy"]
+atlas = ExtResource("1_hy5hx")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yv0qb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0qyg4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4f83o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_06kig")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0xruy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l16sa"]
+size = Vector2(14, 14)
+
+[node name="bouncing_slime" type="Node2D" groups=["Player"]]
+script = ExtResource("1_86fx3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -12)
+sprite_frames = SubResource("SpriteFrames_yv0qb")
+autoplay = "default"
+frame_progress = 0.535353
+
+[node name="BounceZone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BounceZone"]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_l16sa")
+
+[node name="GroundCheckLeft" type="RayCast2D" parent="."]
+position = Vector2(-3, -7)
+target_position = Vector2(0, 13)
+
+[node name="GroundCheckRight" type="RayCast2D" parent="."]
+position = Vector2(3, -7)
+target_position = Vector2(0, 13)
+
+[connection signal="body_entered" from="BounceZone" to="." method="_on_bounce_zone_body_entered"]
