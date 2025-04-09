@@ -2,6 +2,7 @@ extends RigidBody2D
 
 @export var start_position: Vector2
 @onready var timer = $Timer
+var has_hit_player := false
 
 func _ready() -> void:
 	start_position = global_position
@@ -14,10 +15,14 @@ func _on_trigger_area_body_entered(body: Node2D) -> void:
 
 func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("Player"):
-		#body.die() plays death animation, but doesnt respawn properly
+		has_hit_player = true
 		print("Spike hit the player!")
 		body.die()
 		timer.start()
+	else:
+		await get_tree().create_timer(0.5).timeout
+		if not has_hit_player:
+			queue_free()
 
 func _on_timer_timeout():
 	print("restarting game")
