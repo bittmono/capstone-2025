@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bfwjxcy8idld8"]
+
+[ext_resource type="Script" path="res://scripts/ice_platform_long.gd" id="1_5cpgu"]
+[ext_resource type="Texture2D" uid="uid://bn306vp6fa4o6" path="res://assets/sprites (brackeys)/platforms.png" id="1_rsldf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bvsj2"]
+size = Vector2(32, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a1vt2"]
+size = Vector2(32, 4.5)
+
+[node name="Ice Platform" type="StaticBody2D"]
+script = ExtResource("1_5cpgu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_rsldf")
+region_enabled = true
+region_rect = Rect2(16, 48, 32, 9.10093)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_bvsj2")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_a1vt2")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
