@@ -2,11 +2,16 @@ extends CharacterBody2D
 
 const SPEED = 150.0
 const JUMP_VELOCITY = -320.0
+const NORMAL_FRICTION = 10.0
+const ICE_FRICTION = 0.05
+const ICE_ACCELERATION = 15.0
+const ICE_MAX_SPEED = 400.0
 
 var is_alive = true
 var has_played_death_animation = false
 var is_vanishing = false
 var has_played_vanish_animation = false
+var on_ice = false
 
 @onready var animated_sprite = $AnimatedSprite2D
 
@@ -74,9 +79,25 @@ func _physics_process(delta):
 	else:
 		animated_sprite.play("jump")
 	
-	if direction:
-		velocity.x = direction * SPEED
+	if on_ice and is_on_floor():
+		# Ice movement
+		if direction:
+			#velocity.x = move_toward(velocity.x, direction * SPEED, ICE_ACCELERATION * delta)
+			# Accelerates slowly, can build up speed
+			velocity.x += direction * ICE_ACCELERATION * delta
+			
+			# Cap max speed
+			velocity.x = clamp(velocity.x, -ICE_MAX_SPEED, ICE_MAX_SPEED)
+		else:
+			velocity.x = move_toward(velocity.x, 0, ICE_FRICTION)
+			
+	
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		# Normal movement
+		if direction:
+			velocity.x = direction * SPEED
+		else:
+			velocity.x = move_toward(velocity.x, 0, NORMAL_FRICTION)
 	
 	move_and_slide()
+		

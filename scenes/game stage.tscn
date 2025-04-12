@@ -1,10 +1,13 @@
-[gd_scene load_steps=31 format=4 uid="uid://bt3ln3k2vtwjr"]
+[gd_scene load_steps=33 format=4 uid="uid://bt3ln3k2vtwjr"]
 
 [ext_resource type="Texture2D" uid="uid://e4dj1j2ocag5" path="res://assets/backgrounds (clouds)/babyblue/1.png" id="1_1nwv5"]
 [ext_resource type="Texture2D" uid="uid://c7k85g0243nhl" path="res://assets/backgrounds (clouds)/light blue/1.png" id="1_85ohn"]
+[ext_resource type="Texture2D" uid="uid://lgqjy8aqvvaq" path="res://assets/backgrounds (clouds)/lavender/1.png" id="1_d44c3"]
 [ext_resource type="Texture2D" uid="uid://dxkym5rh7dv5u" path="res://assets/backgrounds (clouds)/light blue/2.png" id="2_lsmmy"]
 [ext_resource type="Texture2D" uid="uid://b0whmndvmjia3" path="res://assets/backgrounds (clouds)/light blue/4.png" id="3_mb02e"]
+[ext_resource type="Texture2D" uid="uid://dg5hx3vcb458k" path="res://assets/backgrounds (clouds)/lavender/3.png" id="3_ocvgm"]
 [ext_resource type="Texture2D" uid="uid://bqsjk3dwa4ald" path="res://assets/backgrounds (clouds)/babyblue/4.png" id="4_0r8mi"]
+[ext_resource type="Texture2D" uid="uid://cd8r2mvlrjspc" path="res://assets/backgrounds (clouds)/lavender/4.png" id="4_oe6fg"]
 [ext_resource type="Texture2D" uid="uid://dki2mkxmw8teq" path="res://assets/backgrounds (clouds)/babyblue/5.png" id="5_xpi3r"]
 [ext_resource type="Texture2D" uid="uid://dl455aeeo0lgt" path="res://assets/sprites (brackeys)/world_tileset.png" id="6_a0o3l"]
 [ext_resource type="PackedScene" uid="uid://dymev1wewgm1d" path="res://scenes/killzone.tscn" id="7_5kf02"]
@@ -15,9 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://d31pnw1lylbko" path="res://assets/backgrounds (clouds)/orange (sunset)/3.png" id="10_agmoq"]
 [ext_resource type="PackedScene" uid="uid://dyentpl1kf5jn" path="res://scenes/stage one resources/platform_move_left.tscn" id="11_5iks1"]
 [ext_resource type="Texture2D" uid="uid://c6jnusvndjbap" path="res://assets/backgrounds (clouds)/orange (sunset)/4.png" id="11_utgxi"]
-[ext_resource type="Texture2D" uid="uid://dynxmxq5lkl53" path="res://assets/backgrounds (clouds)/orange (sunset)/5.png" id="12_cs7et"]
 [ext_resource type="PackedScene" uid="uid://bwg4gxcmjgvce" path="res://scenes/stage one resources/instructions_sign.tscn" id="12_kt774"]
-[ext_resource type="Texture2D" uid="uid://b6gb7g3mglkl2" path="res://assets/backgrounds (clouds)/orange (sunset)/6.png" id="13_4u4va"]
 [ext_resource type="PackedScene" uid="uid://cvdyg2sayqg8" path="res://scenes/stage one resources/teleporting_sign.tscn" id="13_kofy3"]
 [ext_resource type="PackedScene" uid="uid://daogq3q004kx5" path="res://scenes/stage one resources/death_mushroom.tscn" id="14_bqdra"]
 [ext_resource type="PackedScene" uid="uid://t46mlqw6mk3h" path="res://scenes/stage two resources/spike_basic.tscn" id="17_notjo"]
@@ -26,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://baa0i0rdrtjh" path="res://scenes/stage three resources/platform yellow.tscn" id="23_vsnwo"]
 [ext_resource type="PackedScene" uid="uid://x6ck7khwhemq" path="res://scenes/stage three resources/slime.tscn" id="24_3fi26"]
 [ext_resource type="PackedScene" uid="uid://di3rlyyq0yn0r" path="res://scenes/stage three resources/bouncing_slime.tscn" id="25_aea4i"]
+[ext_resource type="PackedScene" uid="uid://bfwjxcy8idld8" path="res://scenes/stage four resources/ice_platform_long.tscn" id="31_txtoh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vjm5p"]
 texture = ExtResource("6_a0o3l")
@@ -226,120 +228,132 @@ position = Vector2(2, 0)
 [node name="Background" type="ParallaxBackground" parent="."]
 follow_viewport_enabled = true
 
+[node name="lavender solid" type="ParallaxLayer" parent="Background"]
+position = Vector2(414, 145)
+scale = Vector2(0.728265, 1.91561)
+motion_scale = Vector2(0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/lavender solid"]
+z_index = 4
+position = Vector2(-576.713, -621.212)
+scale = Vector2(1.23009, 0.655756)
+texture = ExtResource("1_d44c3")
+
+[node name="lavender darkerclouds" type="ParallaxLayer" parent="Background"]
+z_index = 4
+position = Vector2(597, -1850)
+rotation = 1.56462
+scale = Vector2(1.05228, 1.02873)
+motion_scale = Vector2(0.06, 0.06)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/lavender darkerclouds"]
+position = Vector2(801.995, 641.822)
+scale = Vector2(0.782043, 0.995195)
+texture = ExtResource("3_ocvgm")
+region_enabled = true
+region_rect = Rect2(0, 0, 418, 324)
+
+[node name="lavender large cloud" type="ParallaxLayer" parent="Background"]
+z_index = 5
+position = Vector2(1048, 210)
+scale = Vector2(0.794092, 1.01906)
+motion_scale = Vector2(0.05, 0.05)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/lavender large cloud"]
+position = Vector2(-1286.3, -1229.43)
+scale = Vector2(0.880799, 1.14567)
+texture = ExtResource("4_oe6fg")
+flip_h = true
+
+[node name="lavender bottom first cloud" type="ParallaxLayer" parent="Background"]
+position = Vector2(2449, -1368)
+motion_scale = Vector2(0.06, 0.06)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/lavender bottom first cloud"]
+z_index = 4
+position = Vector2(-2436, 669)
+scale = Vector2(1.31816, 0.96176)
+texture = ExtResource("3_ocvgm")
+flip_v = true
+region_enabled = true
+region_rect = Rect2(0, 0, 356, 324)
+
 [node name="orange - solid background" type="ParallaxLayer" parent="Background"]
 z_index = 3
-position = Vector2(-248, -859)
+position = Vector2(-233, -799)
 rotation = 0.000136614
 scale = Vector2(0.641114, 1.32973)
 motion_scale = Vector2(0, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Background/orange - solid background"]
-position = Vector2(384.848, -54.0922)
+position = Vector2(366.571, 76.6831)
 rotation = -3.13922
-scale = Vector2(1.39882, 1.7008)
+scale = Vector2(1.40352, 1.11653)
 texture = ExtResource("9_57uns")
 
 [node name="orange - orange cloud 1" type="ParallaxLayer" parent="Background"]
 z_index = 3
-position = Vector2(-133, -869)
+position = Vector2(-83, -791)
 rotation = -0.00954732
 scale = Vector2(1.16294, -1.42437)
 motion_scale = Vector2(0.007, 0.007)
 
 [node name="Sprite2D" type="Sprite2D" parent="Background/orange - orange cloud 1"]
-position = Vector2(107.741, -346.271)
+position = Vector2(65.874, -324.203)
 rotation = -0.00552974
-scale = Vector2(0.804571, 0.733941)
+scale = Vector2(0.756658, 0.731386)
 texture = ExtResource("11_utgxi")
 
 [node name="orange - orange cloud 2" type="ParallaxLayer" parent="Background"]
 z_index = 3
-position = Vector2(428, 135)
+position = Vector2(478, 213)
 rotation = -0.0131109
 motion_scale = Vector2(0.007, 0.007)
 
 [node name="Sprite2D" type="Sprite2D" parent="Background/orange - orange cloud 2"]
-position = Vector2(-424.107, -833.632)
+position = Vector2(-469.485, -843.251)
 rotation = -6.26805
-scale = Vector2(0.931147, 1)
+scale = Vector2(0.878451, 0.937869)
 texture = ExtResource("11_utgxi")
-
-[node name="orange - orange cloud layer 1" type="ParallaxLayer" parent="Background"]
-z_index = 3
-position = Vector2(617, -728)
-rotation = -3.12971
-motion_scale = Vector2(0.007, 0.007)
-
-[node name="Sprite2D" type="Sprite2D" parent="Background/orange - orange cloud layer 1"]
-position = Vector2(622.951, -344.426)
-scale = Vector2(0.927835, 0.997715)
-texture = ExtResource("12_cs7et")
 
 [node name="orange - grey cloud 1" type="ParallaxLayer" parent="Background"]
 z_index = 3
-position = Vector2(94.9999, -741)
+position = Vector2(145, -663)
 rotation = 3.1122
 motion_scale = Vector2(0.03, 0.03)
 
 [node name="Sprite2D" type="Sprite2D" parent="Background/orange - grey cloud 1"]
-position = Vector2(80.8944, 164.055)
+position = Vector2(167.428, 55.9446)
 rotation = -6.25373
+scale = Vector2(1.17501, 0.895075)
 texture = ExtResource("10_agmoq")
 region_enabled = true
 region_rect = Rect2(176, 0, 400, 324)
 
-[node name="orange - small grey cloud 1" type="ParallaxLayer" parent="Background"]
-z_index = 3
-position = Vector2(-1636, -663)
-rotation = 1.02422
-motion_scale = Vector2(0.04, 0.04)
-
-[node name="Sprite2D" type="Sprite2D" parent="Background/orange - small grey cloud 1"]
-position = Vector2(656.192, -1584.86)
-rotation = 0.0031426
-scale = Vector2(1.03545, -0.941031)
-texture = ExtResource("13_4u4va")
-region_enabled = true
-region_rect = Rect2(248, 152, 328, 172)
-
 [node name="orange - cloud 5" type="ParallaxLayer" parent="Background"]
 z_index = 3
-position = Vector2(1163, -1624)
+position = Vector2(1214, -1472)
 rotation = 3.13504
 motion_scale = Vector2(0.06, 0.06)
 
 [node name="Sprite2D" type="Sprite2D" parent="Background/orange - cloud 5"]
-position = Vector2(1068.77, -725.012)
+position = Vector2(1141.11, -775.54)
 rotation = -4.71691
-scale = Vector2(1.15683, 1.13717)
+scale = Vector2(1.1914, 1.15644)
 texture = ExtResource("11_utgxi")
 region_enabled = true
-region_rect = Rect2(144, 0, 432, 320)
+region_rect = Rect2(290, 0, 286, 320)
 
 [node name="orange - cloud 6" type="ParallaxLayer" parent="Background"]
 z_index = 3
-position = Vector2(-752, -2026)
+position = Vector2(-703, -1871)
 rotation = 1.56239
 motion_scale = Vector2(0.06, 0.06)
 
 [node name="Sprite2D" type="Sprite2D" parent="Background/orange - cloud 6"]
-position = Vector2(1068.77, -725.012)
+position = Vector2(1189.66, -668.523)
 rotation = -4.71691
-scale = Vector2(1.15683, 1.13717)
-texture = ExtResource("11_utgxi")
-region_enabled = true
-region_rect = Rect2(144, 0, 432, 320)
-
-[node name="orange - cloud 7" type="ParallaxLayer" parent="Background"]
-z_index = 3
-position = Vector2(-1141, -74)
-rotation = -0.0131052
-motion_scale = Vector2(0.06, 0.06)
-
-[node name="Sprite2D" type="Sprite2D" parent="Background/orange - cloud 7"]
-position = Vector2(1068.77, -725.012)
-rotation = -4.71691
-scale = Vector2(1.15683, 1.13717)
+scale = Vector2(1.0926, 1.09747)
 texture = ExtResource("11_utgxi")
 region_enabled = true
 region_rect = Rect2(144, 0, 432, 320)
@@ -351,8 +365,8 @@ scale = Vector2(0.903416, 2.63542)
 motion_scale = Vector2(0, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Background/dark blue - solid background"]
-position = Vector2(-1.78814e-07, 89.9059)
-scale = Vector2(0.987332, 0.993292)
+position = Vector2(-7.6862, 195.417)
+scale = Vector2(0.960644, 0.341986)
 texture = ExtResource("1_85ohn")
 
 [node name="dark blue - cloud main 1" type="ParallaxLayer" parent="Background"]
@@ -545,26 +559,48 @@ position = Vector2(-104, -1605)
 [node name="death_slime2" parent="Stage Three - Obstacles" instance=ExtResource("24_3fi26")]
 position = Vector2(12, -1605)
 
-[node name="bouncing_slime2" parent="Stage Three - Obstacles" instance=ExtResource("25_aea4i")]
-position = Vector2(114, -1797)
-
-[node name="AppearingSpike" parent="Stage Three - Obstacles" instance=ExtResource("19_ea80r")]
-position = Vector2(-71, -1453)
-
 [node name="death_slime3" parent="Stage Three - Obstacles" instance=ExtResource("24_3fi26")]
 position = Vector2(42, -1446)
+
+[node name="AppearingSpike" parent="Stage Three - Obstacles" instance=ExtResource("19_ea80r")]
+position = Vector2(-56, -1453)
 
 [node name="AppearingSpike2" parent="Stage Three - Obstacles" instance=ExtResource("19_ea80r")]
 position = Vector2(-30, -1807)
 
-[node name="bouncing_slime" parent="Stage Three - Obstacles" instance=ExtResource("25_aea4i")]
-position = Vector2(-71, -1302)
-
 [node name="Teleporting Sign" parent="Stage Three - Obstacles" instance=ExtResource("13_kofy3")]
 position = Vector2(-279, -1404)
 
+[node name="bouncing_slime" parent="Stage Three - Obstacles" instance=ExtResource("25_aea4i")]
+position = Vector2(-71, -1302)
+
+[node name="bouncing_slime2" parent="Stage Three - Obstacles" instance=ExtResource("25_aea4i")]
+position = Vector2(114, -1797)
+
+[node name="bouncing_slime3" parent="Stage Three - Obstacles" instance=ExtResource("25_aea4i")]
+position = Vector2(169, -1477)
+scale = Vector2(1, 0.923363)
+
+[node name="bouncing_slime4" parent="Stage Three - Obstacles" instance=ExtResource("25_aea4i")]
+position = Vector2(171, -1798)
+
+[node name="bouncing_slime5" parent="Stage Three - Obstacles" instance=ExtResource("25_aea4i")]
+position = Vector2(-199, -1781)
+
+[node name="FallingSpike" parent="Stage Three - Obstacles" instance=ExtResource("18_8jspe")]
+position = Vector2(-103, -1535)
+
+[node name="FallingSpike2" parent="Stage Three - Obstacles" instance=ExtResource("18_8jspe")]
+position = Vector2(-7, -1535)
+
+[node name="FallingSpike3" parent="Stage Three - Obstacles" instance=ExtResource("18_8jspe")]
+position = Vector2(-87, -1887)
+
+[node name="FallingSpike4" parent="Stage Three - Obstacles" instance=ExtResource("18_8jspe")]
+position = Vector2(57, -1887)
+
 [node name="Player" parent="." instance=ExtResource("8_ixqjo")]
-position = Vector2(131, -1274)
+position = Vector2(130, -1973)
 scale = Vector2(0.522512, 0.522512)
 collision_layer = 3
 collision_mask = 1
@@ -576,3 +612,15 @@ zoom = Vector2(3, 3)
 limit_bottom = 159
 limit_smoothed = true
 position_smoothing_enabled = true
+
+[node name="Ice Platform" parent="." instance=ExtResource("31_txtoh")]
+position = Vector2(56, -1984)
+
+[node name="Ice Platform2" parent="." instance=ExtResource("31_txtoh")]
+position = Vector2(24, -1984)
+
+[node name="Ice Platform3" parent="." instance=ExtResource("31_txtoh")]
+position = Vector2(-8, -1984)
+
+[node name="Ice Platform4" parent="." instance=ExtResource("31_txtoh")]
+position = Vector2(-40, -1984)
