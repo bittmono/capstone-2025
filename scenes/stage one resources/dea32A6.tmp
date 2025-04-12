@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nsbtb"]
 size = Vector2(9, 9)
 
-[node name="DeathMushroom" type="Area2D"]
+[node name="DeathMushroom" type="Area2D" groups=["OneShot"]]
 script = ExtResource("1_5l7hy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -19,6 +19,7 @@ position = Vector2(-0.5, 0.5)
 shape = SubResource("RectangleShape2D_nsbtb")
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 0.7
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
