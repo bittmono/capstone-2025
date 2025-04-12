@@ -17,7 +17,6 @@ var on_ice = false
 @export var start_position: Vector2
 
 @onready var jump_sound: AudioStreamPlayer2D = $JumpSound #jump.wav
-@export var start_position: Vector2
 
 
 func _ready(): 
