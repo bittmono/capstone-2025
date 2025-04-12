@@ -16,6 +16,10 @@ var on_ice = false
 @onready var animated_sprite = $AnimatedSprite2D
 @export var start_position: Vector2
 
+@onready var jump_sound: AudioStreamPlayer2D = $JumpSound #jump.wav
+@export var start_position: Vector2
+
+
 func _ready(): 
 	start_position = global_position
 
@@ -64,6 +68,7 @@ func _physics_process(delta):
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		jump_sound.play()
 
 	# Get the input direction
 	var direction = Input.get_axis("move_left", "move_right")
