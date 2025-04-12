@@ -1,8 +1,9 @@
-[gd_scene load_steps=40 format=3 uid="uid://b6ajc1hjlgdd8"]
+[gd_scene load_steps=41 format=3 uid="uid://b6ajc1hjlgdd8"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_4est6"]
 [ext_resource type="Texture2D" uid="uid://dt7we0u752roe" path="res://assets/sprites (others)/hooded protagonist sheet.png" id="1_lb4p3"]
 [ext_resource type="AudioStream" uid="uid://cien15715i83x" path="res://assets/sounds (others)/Jump.wav" id="3_xvnif"]
+[ext_resource type="AudioStream" uid="uid://bnrvir4xphhei" path="res://assets/sounds (brackeys)/explosion.wav" id="4_8en6e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2eeqa"]
 atlas = ExtResource("1_lb4p3")
@@ -291,3 +292,6 @@ shape = SubResource("RectangleShape2D_um6o3")
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_xvnif")
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_8en6e")

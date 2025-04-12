@@ -17,6 +17,7 @@ var on_ice = false
 @export var start_position: Vector2
 
 @onready var jump_sound: AudioStreamPlayer2D = $JumpSound #jump.wav
+@onready var death_sound: AudioStreamPlayer2D = $DeathSound #explosion.wav
 
 
 func _ready(): 
@@ -25,6 +26,7 @@ func _ready():
 func die():
 	print("player died")
 	is_alive = false
+	death_sound.play()
 
 func update_status():
 	if is_alive == false and not has_played_death_animation:
