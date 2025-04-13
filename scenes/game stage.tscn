@@ -600,7 +600,7 @@ position = Vector2(-87, -1887)
 position = Vector2(57, -1887)
 
 [node name="Player" parent="." instance=ExtResource("8_ixqjo")]
-position = Vector2(130, -1973)
+position = Vector2(116, -1976)
 scale = Vector2(0.522512, 0.522512)
 collision_layer = 3
 collision_mask = 1
@@ -614,13 +614,16 @@ limit_smoothed = true
 position_smoothing_enabled = true
 
 [node name="Ice Platform" parent="." instance=ExtResource("31_txtoh")]
-position = Vector2(56, -1984)
+position = Vector2(7, -2014)
+rotation = 0.00529362
 
 [node name="Ice Platform2" parent="." instance=ExtResource("31_txtoh")]
-position = Vector2(24, -1984)
+position = Vector2(-27, -2014)
 
 [node name="Ice Platform3" parent="." instance=ExtResource("31_txtoh")]
-position = Vector2(-8, -1984)
+position = Vector2(-59, -2007)
+rotation = -0.419443
 
 [node name="Ice Platform4" parent="." instance=ExtResource("31_txtoh")]
-position = Vector2(-40, -1984)
+position = Vector2(-88, -1993)
+rotation = -0.481602
