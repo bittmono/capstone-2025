@@ -43,7 +43,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ndnw"]
 size = Vector2(12, 13)
 
-[node name="death_slime" type="Node2D"]
+[node name="death_slime" type="Node2D" groups=["Player"]]
 script = ExtResource("1_2bwjp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

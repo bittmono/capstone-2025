@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 const SPEED = 150.0
 const JUMP_VELOCITY = -320.0
-const NORMAL_FRICTION = 10.0
+const NORMAL_FRICTION = 20.0
 const ICE_FRICTION = 0.0
 const ICE_ACCELERATION = 10.0
 const ICE_MAX_SPEED = 500.0
