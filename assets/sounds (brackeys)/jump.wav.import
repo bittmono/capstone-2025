@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://cr10ywd1uci4l"
-path="res://.godot/imported/Laser2.wav-a9ebd383619fbfa6773be6726795abc9.sample"
+uid="uid://c0t11fdy6y4y1"
+path="res://.godot/imported/jump.wav-cbd578bc4ee7526f42bace43f72ab03f.sample"
 
 [deps]
 
-source_file="res://assets/sounds/Laser2.wav"
-dest_files=["res://.godot/imported/Laser2.wav-a9ebd383619fbfa6773be6726795abc9.sample"]
+source_file="res://assets/sounds (brackeys)/jump.wav"
+dest_files=["res://.godot/imported/jump.wav-cbd578bc4ee7526f42bace43f72ab03f.sample"]
 
 [params]
 

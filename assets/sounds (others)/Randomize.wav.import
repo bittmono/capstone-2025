@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://denhwnstb7kwv"
-path="res://.godot/imported/Randomize.wav-f96550cf44ea2f597a98696099e92d33.sample"
+path="res://.godot/imported/Randomize.wav-dae086a356d1049492bf9806a8204128.sample"
 
 [deps]
 
-source_file="res://assets/sounds/Randomize.wav"
-dest_files=["res://.godot/imported/Randomize.wav-f96550cf44ea2f597a98696099e92d33.sample"]
+source_file="res://assets/sounds (others)/Randomize.wav"
+dest_files=["res://.godot/imported/Randomize.wav-dae086a356d1049492bf9806a8204128.sample"]
 
 [params]
 
