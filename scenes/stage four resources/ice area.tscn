@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfwjxcy8idld8"]
+
+[ext_resource type="Script" path="res://scripts/ice area.gd" id="1_a214l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a1vt2"]
+size = Vector2(50, 13)
+
+[node name="Ice Area" type="Area2D"]
+script = ExtResource("1_a214l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_a1vt2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
