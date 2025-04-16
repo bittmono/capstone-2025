@@ -25,11 +25,9 @@
 [ext_resource type="PackedScene" uid="uid://bkn7wfy8ekqlx" path="res://scenes/falling_spike.tscn" id="18_8jspe"]
 [ext_resource type="PackedScene" uid="uid://bbeaqbo44o7gn" path="res://scenes/appearing_spike.tscn" id="19_ea80r"]
 [ext_resource type="PackedScene" uid="uid://baa0i0rdrtjh" path="res://scenes/stage three resources/platform yellow.tscn" id="23_vsnwo"]
-
-[ext_resource type="PackedScene" uid="uid://x6ck7khwhemq" path="res://scenes/stage three resources/slime.tscn" id="24_3fi26"]
-[ext_resource type="PackedScene" uid="uid://di3rlyyq0yn0r" path="res://scenes/stage three resources/bouncing_slime.tscn" id="25_aea4i"]
+[ext_resource type="PackedScene" uid="uid://x6ck7khwhemq" path="res://scenes/slime.tscn" id="24_3fi26"]
+[ext_resource type="PackedScene" uid="uid://di3rlyyq0yn0r" path="res://scenes/bouncing_slime.tscn" id="25_aea4i"]
 [ext_resource type="PackedScene" uid="uid://bfwjxcy8idld8" path="res://scenes/stage four resources/ice area.tscn" id="28_8jrcg"]
-
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vjm5p"]
 texture = ExtResource("6_a0o3l")

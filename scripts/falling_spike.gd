@@ -1,7 +1,8 @@
 extends RigidBody2D
 
 @export var start_position: Vector2
-@onready var timer = $Timer
+@onready var timer: Timer = $Timer
+
 var has_hit_player := false
 
 func _ready() -> void:
@@ -24,6 +25,6 @@ func _on_body_entered(body: Node) -> void:
 		if not has_hit_player:
 			queue_free()
 
-func _on_timer_timeout():
+func _on_timer_timeout() -> void:
 	print("restarting game")
-	get_tree().call_deferred("reload_current_scene")
+	get_tree().reload_current_scene()

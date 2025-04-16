@@ -1,5 +1,5 @@
 extends Area2D
-@onready var timer = $Timer
+@onready var timer: Timer = $Timer
 
 func _ready(): 
 	hide_spike() #start hidden
@@ -21,6 +21,6 @@ func _on_body_entered(body: Node2D):
 		body.die() #calls the death animation only
 		timer.start()
 
-func _on_timer_timeout():
+func _on_timer_timeout() -> void:
 	print("restarting game")
-	get_tree().reload_current_scene() #restarts scene
+	get_tree().reload_current_scene()
