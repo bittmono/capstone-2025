@@ -2,10 +2,14 @@ extends CharacterBody2D
 
 const SPEED = 150.0
 const JUMP_VELOCITY = -320.0
-const NORMAL_FRICTION = 10.0
-const ICE_FRICTION = 0.05
-const ICE_ACCELERATION = 15.0
-const ICE_MAX_SPEED = 400.0
+const NORMAL_FRICTION = 20.0
+
+const ICE_FRICTION = -15.0   # slip
+const ICE_ACCELERATION = 15.0 
+
+const ICE_MAX_SPEED = 500.0
+#const ICE_LAUNCH_MULTIPLIER = 1.2
+
 
 var is_alive = true
 var has_played_death_animation = false
@@ -63,8 +67,9 @@ func _physics_process(delta):
 		return
 	
 	# Add the gravity.
+	var gravity_vec = get_gravity()
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		velocity.y += gravity_vec.y * delta # Applies to vertical gravity
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
@@ -88,20 +93,17 @@ func _physics_process(delta):
 			animated_sprite.play("run")
 	else:
 		animated_sprite.play("jump")
+
 	
+	# If walking on ice
 	if on_ice and is_on_floor():
 		# Ice movement
 		if direction:
-			#velocity.x = move_toward(velocity.x, direction * SPEED, ICE_ACCELERATION * delta)
 			# Accelerates slowly, can build up speed
 			velocity.x += direction * ICE_ACCELERATION * delta
-			
-			# Cap max speed
 			velocity.x = clamp(velocity.x, -ICE_MAX_SPEED, ICE_MAX_SPEED)
 		else:
 			velocity.x = move_toward(velocity.x, 0, ICE_FRICTION)
-			
-	
 	else:
 		# Normal movement
 		if direction:

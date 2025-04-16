@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bn306vp6fa4o6" path="res://assets/sprites (brackeys)/platforms.png" id="2_bbboh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sfqny"]
-size = Vector2(32, 9)
+size = Vector2(16, 9)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5pygq"]
 size = Vector2(43, 27)
@@ -17,7 +17,7 @@ script = ExtResource("1_d572m")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_bbboh")
 region_enabled = true
-region_rect = Rect2(16, 32, 32, 8)
+region_rect = Rect2(-0.0210531, 32.0999, 15.9481, 8.86367)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2(0, -0.5)
