@@ -18,10 +18,19 @@ var has_played_vanish_animation = false
 var on_ice = false
 
 @onready var animated_sprite = $AnimatedSprite2D
+@export var start_position: Vector2
+
+@onready var jump_sound: AudioStreamPlayer2D = $JumpSound #jump.wav
+@onready var death_sound: AudioStreamPlayer2D = $DeathSound #explosion.wav
+
+
+func _ready(): 
+	start_position = global_position
 
 func die():
 	print("player died")
 	is_alive = false
+	death_sound.play()
 
 func update_status():
 	if is_alive == false and not has_played_death_animation:
@@ -65,6 +74,7 @@ func _physics_process(delta):
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		jump_sound.play()
 
 	# Get the input direction
 	var direction = Input.get_axis("move_left", "move_right")
