@@ -21,7 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://bwg4gxcmjgvce" path="res://scenes/stage one resources/instructions_sign.tscn" id="12_kt774"]
 [ext_resource type="PackedScene" uid="uid://cvdyg2sayqg8" path="res://scenes/stage one resources/teleporting_sign.tscn" id="13_kofy3"]
 [ext_resource type="PackedScene" uid="uid://daogq3q004kx5" path="res://scenes/stage one resources/death_mushroom.tscn" id="14_bqdra"]
-[ext_resource type="PackedScene" uid="uid://t46mlqw6mk3h" path="res://scenes/stage two resources/spike_basic.tscn" id="17_notjo"]
+[ext_resource type="PackedScene" uid="uid://t46mlqw6mk3h" path="res://assets/sprites (others)/spike_basic.tscn" id="17_notjo"]
 [ext_resource type="PackedScene" uid="uid://bkn7wfy8ekqlx" path="res://scenes/stage two resources/falling_spike.tscn" id="18_8jspe"]
 [ext_resource type="PackedScene" uid="uid://bbeaqbo44o7gn" path="res://scenes/stage two resources/appearing_spike.tscn" id="19_ea80r"]
 [ext_resource type="PackedScene" uid="uid://baa0i0rdrtjh" path="res://scenes/stage three resources/platform yellow.tscn" id="23_vsnwo"]
@@ -581,7 +581,7 @@ position = Vector2(169, -1477)
 scale = Vector2(1, 0.923363)
 
 [node name="bouncing_slime4" parent="Stage Three - Obstacles" instance=ExtResource("25_aea4i")]
-position = Vector2(171, -1798)
+position = Vector2(171, -1797)
 
 [node name="bouncing_slime5" parent="Stage Three - Obstacles" instance=ExtResource("25_aea4i")]
 position = Vector2(-199, -1781)
@@ -595,8 +595,18 @@ position = Vector2(-87, -1887)
 [node name="FallingSpike4" parent="Stage Three - Obstacles" instance=ExtResource("18_8jspe")]
 position = Vector2(57, -1887)
 
+[node name="Stage Four - Obstacles" type="Node2D" parent="."]
+
+[node name="Ice Area" parent="Stage Four - Obstacles" instance=ExtResource("28_8jrcg")]
+position = Vector2(-177, -2004)
+scale = Vector2(3.50144, 2.69681)
+
+[node name="Ice Area2" parent="Stage Four - Obstacles" instance=ExtResource("28_8jrcg")]
+position = Vector2(-153, -2043)
+scale = Vector2(5.23096, 3.00899)
+
 [node name="Player" parent="." instance=ExtResource("8_ixqjo")]
-position = Vector2(48, -1996)
+position = Vector2(35, -1985)
 scale = Vector2(0.522512, 0.522512)
 collision_layer = 3
 collision_mask = 1
@@ -608,11 +618,3 @@ zoom = Vector2(3, 3)
 limit_bottom = 159
 limit_smoothed = true
 position_smoothing_enabled = true
-
-[node name="Ice Area" parent="." instance=ExtResource("28_8jrcg")]
-position = Vector2(-152, -2002)
-scale = Vector2(2.64285, 1.01932)
-
-[node name="Ice Area2" parent="." instance=ExtResource("28_8jrcg")]
-position = Vector2(-244, -2002)
-scale = Vector2(0.983587, 1.06183)
