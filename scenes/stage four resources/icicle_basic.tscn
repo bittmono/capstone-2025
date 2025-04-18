@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://t46mlqw6mk3h"]
+
+[ext_resource type="Script" path="res://scripts/spike_basic.gd" id="1_v87ij"]
+[ext_resource type="Texture2D" uid="uid://dna3yh24os3pf" path="res://assets/sprites (others)/icerocks_pixel.png" id="2_u5tah"]
+
+[node name="IcicleBasic" type="Area2D" groups=["Player"]]
+script = ExtResource("1_v87ij")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, -6)
+scale = Vector2(0.99, 1)
+texture = ExtResource("2_u5tah")
+region_enabled = true
+region_rect = Rect2(47.9957, 0.477383, 15.9478, 15.4723)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(28, -2)
+polygon = PackedVector2Array(-29, -1, -28, -12, -21, 4, -37, 4, -34, -10)
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

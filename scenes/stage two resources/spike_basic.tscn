@@ -1,15 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://t46mlqw6mk3h"]
+[gd_scene load_steps=3 format=3 uid="uid://ckpwdlmn4axxd"]
 
-[ext_resource type="Script" path="res://scripts/spike_basic.gd" id="1_v87ij"]
-[ext_resource type="Texture2D" uid="uid://cayklemintmd1" path="res://assets/sprites (others)/spikes-for-game.png" id="1_wrpx2"]
+[ext_resource type="Script" path="res://scripts/spike_basic.gd" id="1_sq830"]
+[ext_resource type="Texture2D" uid="uid://cayklemintmd1" path="res://assets/sprites (others)/spikes-for-game.png" id="2_b5cm4"]
 
 [node name="SpikeBasic" type="Area2D" groups=["Player"]]
-script = ExtResource("1_v87ij")
+script = ExtResource("1_sq830")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1, -6)
 scale = Vector2(0.99, 1)
-texture = ExtResource("1_wrpx2")
+texture = ExtResource("2_b5cm4")
 region_enabled = true
 region_rect = Rect2(10.278, 44.9249, 34.4701, 18.8282)
 
@@ -17,4 +17,7 @@ region_rect = Rect2(10.278, 44.9249, 34.4701, 18.8282)
 position = Vector2(22, -4)
 polygon = PackedVector2Array(-37, 4, -30, -8, -23, 4, -15, -8, -7, 5)
 
+[node name="Timer" type="Timer" parent="."]
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

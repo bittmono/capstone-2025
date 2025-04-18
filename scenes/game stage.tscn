@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://bt3ln3k2vtwjr"]
+[gd_scene load_steps=34 format=4 uid="uid://bt3ln3k2vtwjr"]
 
 [ext_resource type="Texture2D" uid="uid://e4dj1j2ocag5" path="res://assets/backgrounds (clouds)/babyblue/1.png" id="1_1nwv5"]
 [ext_resource type="Texture2D" uid="uid://c7k85g0243nhl" path="res://assets/backgrounds (clouds)/light blue/1.png" id="1_85ohn"]
@@ -21,15 +21,14 @@
 [ext_resource type="PackedScene" uid="uid://bwg4gxcmjgvce" path="res://scenes/stage one resources/instructions_sign.tscn" id="12_kt774"]
 [ext_resource type="PackedScene" uid="uid://cvdyg2sayqg8" path="res://scenes/stage one resources/teleporting_sign.tscn" id="13_kofy3"]
 [ext_resource type="PackedScene" uid="uid://daogq3q004kx5" path="res://scenes/stage one resources/death_mushroom.tscn" id="14_bqdra"]
-[ext_resource type="PackedScene" uid="uid://t46mlqw6mk3h" path="res://assets/sprites (others)/spike_basic.tscn" id="17_notjo"]
-[ext_resource type="PackedScene" uid="uid://bkn7wfy8ekqlx" path="res://scenes/stage two resources/falling_spike.tscn" id="18_8jspe"]
-[ext_resource type="PackedScene" uid="uid://bbeaqbo44o7gn" path="res://scenes/stage two resources/appearing_spike.tscn" id="19_ea80r"]
+[ext_resource type="PackedScene" uid="uid://t46mlqw6mk3h" path="res://scenes/stage four resources/icicle_basic.tscn" id="17_notjo"]
+[ext_resource type="PackedScene" uid="uid://bkn7wfy8ekqlx" path="res://scenes/falling_spike.tscn" id="18_8jspe"]
+[ext_resource type="PackedScene" uid="uid://bbeaqbo44o7gn" path="res://scenes/appearing_spike.tscn" id="19_ea80r"]
 [ext_resource type="PackedScene" uid="uid://baa0i0rdrtjh" path="res://scenes/stage three resources/platform yellow.tscn" id="23_vsnwo"]
-
-[ext_resource type="PackedScene" uid="uid://x6ck7khwhemq" path="res://scenes/stage three resources/slime.tscn" id="24_3fi26"]
-[ext_resource type="PackedScene" uid="uid://di3rlyyq0yn0r" path="res://scenes/stage three resources/bouncing_slime.tscn" id="25_aea4i"]
+[ext_resource type="PackedScene" uid="uid://di3rlyyq0yn0r" path="res://scenes/bouncing_slime.tscn" id="25_aea4i"]
 [ext_resource type="PackedScene" uid="uid://bfwjxcy8idld8" path="res://scenes/stage four resources/ice area.tscn" id="28_8jrcg"]
-
+[ext_resource type="PackedScene" uid="uid://i8ntsxpimlcw" path="res://scenes/stage four resources/falling_icicle.tscn" id="29_6xa63"]
+[ext_resource type="PackedScene" uid="uid://x6ck7khwhemq" path="res://scenes/slime.tscn" id="29_8mucs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vjm5p"]
 texture = ExtResource("6_a0o3l")
@@ -557,13 +556,13 @@ position = Vector2(-120, -1099)
 [node name="Platform Yellow" parent="Stage Three - Obstacles" instance=ExtResource("23_vsnwo")]
 position = Vector2(225, -1896)
 
-[node name="death_slime" parent="Stage Three - Obstacles" instance=ExtResource("24_3fi26")]
+[node name="death_slime" parent="Stage Three - Obstacles" instance=ExtResource("29_8mucs")]
 position = Vector2(-104, -1605)
 
-[node name="death_slime2" parent="Stage Three - Obstacles" instance=ExtResource("24_3fi26")]
+[node name="death_slime2" parent="Stage Three - Obstacles" instance=ExtResource("29_8mucs")]
 position = Vector2(12, -1605)
 
-[node name="death_slime3" parent="Stage Three - Obstacles" instance=ExtResource("24_3fi26")]
+[node name="death_slime3" parent="Stage Three - Obstacles" instance=ExtResource("29_8mucs")]
 position = Vector2(42, -1445)
 
 [node name="AppearingSpike" parent="Stage Three - Obstacles" instance=ExtResource("19_ea80r")]
@@ -603,15 +602,95 @@ position = Vector2(57, -1887)
 [node name="Stage Four - Obstacles" type="Node2D" parent="."]
 
 [node name="Ice Area" parent="Stage Four - Obstacles" instance=ExtResource("28_8jrcg")]
-position = Vector2(-177, -2004)
-scale = Vector2(3.50144, 2.69681)
+position = Vector2(50, -1990)
+scale = Vector2(1.81231, 1.79649)
 
 [node name="Ice Area2" parent="Stage Four - Obstacles" instance=ExtResource("28_8jrcg")]
-position = Vector2(-153, -2043)
-scale = Vector2(5.23096, 3.00899)
+position = Vector2(-202, -2005)
+scale = Vector2(3.36705, 3.17931)
+
+[node name="Ice Area3" parent="Stage Four - Obstacles" instance=ExtResource("28_8jrcg")]
+position = Vector2(-111, -1936)
+scale = Vector2(3.83437, 3.46594)
+
+[node name="Ice Area4" parent="Stage Four - Obstacles" instance=ExtResource("28_8jrcg")]
+position = Vector2(31.0001, -2144)
+rotation = -0.709281
+scale = Vector2(2.60154, 2.14151)
+
+[node name="Ice Area5" parent="Stage Four - Obstacles" instance=ExtResource("28_8jrcg")]
+position = Vector2(-90, -2232)
+scale = Vector2(3.57997, 6.10826)
+
+[node name="FallingIcicle" parent="Stage Four - Obstacles" instance=ExtResource("29_6xa63")]
+position = Vector2(26, -2061)
+
+[node name="FallingIcicle2" parent="Stage Four - Obstacles" instance=ExtResource("29_6xa63")]
+position = Vector2(-7, -2077)
+
+[node name="FallingIcicle3" parent="Stage Four - Obstacles" instance=ExtResource("29_6xa63")]
+position = Vector2(-199, -2094)
+
+[node name="FallingIcicle4" parent="Stage Four - Obstacles" instance=ExtResource("29_6xa63")]
+position = Vector2(-151, -2157)
+
+[node name="FallingIcicle5" parent="Stage Four - Obstacles" instance=ExtResource("29_6xa63")]
+position = Vector2(-71, -2221)
+
+[node name="FallingIcicle6" parent="Stage Four - Obstacles" instance=ExtResource("29_6xa63")]
+position = Vector2(9, -2285)
+
+[node name="FallingIcicle7" parent="Stage Four - Obstacles" instance=ExtResource("29_6xa63")]
+position = Vector2(-39, -2317)
+
+[node name="FallingIcicle8" parent="Stage Four - Obstacles" instance=ExtResource("29_6xa63")]
+position = Vector2(-215, -2429)
+
+[node name="FallingIcicle9" parent="Stage Four - Obstacles" instance=ExtResource("29_6xa63")]
+position = Vector2(153, -2589)
+
+[node name="FallingIcicle10" parent="Stage Four - Obstacles" instance=ExtResource("29_6xa63")]
+position = Vector2(185, -2540)
+
+[node name="FallingIcicle11" parent="Stage Four - Obstacles" instance=ExtResource("29_6xa63")]
+position = Vector2(216, -2462)
+
+[node name="death_slime" parent="Stage Four - Obstacles" instance=ExtResource("29_8mucs")]
+position = Vector2(-194, -1941)
+scale = Vector2(0.987904, 1)
+
+[node name="IcicleBasic" parent="Stage Four - Obstacles" instance=ExtResource("17_notjo")]
+position = Vector2(250, -2071)
+
+[node name="IcicleBasic2" parent="Stage Four - Obstacles" instance=ExtResource("17_notjo")]
+position = Vector2(266, -2071)
+
+[node name="IcicleBasic3" parent="Stage Four - Obstacles" instance=ExtResource("17_notjo")]
+position = Vector2(234, -2088)
+
+[node name="IcicleBasic4" parent="Stage Four - Obstacles" instance=ExtResource("17_notjo")]
+position = Vector2(218, -2103)
+
+[node name="IcicleBasic5" parent="Stage Four - Obstacles" instance=ExtResource("17_notjo")]
+position = Vector2(202, -2120)
+
+[node name="IcicleBasic6" parent="Stage Four - Obstacles" instance=ExtResource("17_notjo")]
+position = Vector2(186, -2135)
+
+[node name="Ice Area6" parent="Stage Four - Obstacles" instance=ExtResource("28_8jrcg")]
+position = Vector2(80.0001, -2268)
+rotation = 1.0539
+scale = Vector2(5.68976, 3.00095)
+
+[node name="Ice Area7" parent="Stage Four - Obstacles" instance=ExtResource("28_8jrcg")]
+position = Vector2(-23, -2408)
+scale = Vector2(2.32731, 11.3369)
+
+[node name="IcicleBasic7" parent="Stage Four - Obstacles" instance=ExtResource("17_notjo")]
+position = Vector2(-213, -2472)
 
 [node name="Player" parent="." instance=ExtResource("8_ixqjo")]
-position = Vector2(48, -1996)
+position = Vector2(109, -1984)
 scale = Vector2(0.522512, 0.522512)
 collision_layer = 3
 collision_mask = 1
