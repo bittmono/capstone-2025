@@ -1,32 +1,33 @@
-[gd_scene load_steps=4 format=3 uid="uid://bkn7wfy8ekqlx"]
+[gd_scene load_steps=4 format=3 uid="uid://i8ntsxpimlcw"]
 
-[ext_resource type="Texture2D" uid="uid://cayklemintmd1" path="res://assets/sprites (others)/spikes-for-game.png" id="1_lcyea"]
-[ext_resource type="Script" path="res://scripts/falling_spike.gd" id="1_ym6tk"]
+[ext_resource type="Script" path="res://scripts/falling_spike.gd" id="1_e3oau"]
+[ext_resource type="Texture2D" uid="uid://bmwtjn0dr8ods" path="res://assets/sprites (others)/icicle_pixel.png" id="2_1bhlt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qjkah"]
-size = Vector2(14.1284, 12.2134)
+size = Vector2(7.10844, 34.8472)
 
-[node name="FallingSpike" type="RigidBody2D" groups=["Player"]]
+[node name="FallingSpike" type="RigidBody2D" groups=["OneShot"]]
 lock_rotation = true
 freeze = true
-script = ExtResource("1_ym6tk")
+script = ExtResource("1_e3oau")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 3.13613
 scale = Vector2(1, 1.00409)
-texture = ExtResource("1_lcyea")
+texture = ExtResource("2_1bhlt")
+flip_v = true
 region_enabled = true
-region_rect = Rect2(12.6556, 43.2966, 16.518, 23.6998)
+region_rect = Rect2(-0.0912843, 15.9939, 16.7189, 15.7717)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-29, 5)
 rotation = 3.14062
-polygon = PackedVector2Array(-37, 11, -29, -3, -21, 11)
+polygon = PackedVector2Array(-37.0126, 12.964, -29, -3, -21.0126, 12.9796)
 
 [node name="TriggerArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerArea" groups=["Player"]]
-position = Vector2(-0.445724, 28.2354)
+position = Vector2(-0.321683, 53.7055)
 rotation = -3.1354
 scale = Vector2(3.18413, -2.25047)
 shape = SubResource("RectangleShape2D_qjkah")
