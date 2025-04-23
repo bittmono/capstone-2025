@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://bt3ln3k2vtwjr"]
+[gd_scene load_steps=35 format=4 uid="uid://bt3ln3k2vtwjr"]
 
 [ext_resource type="Texture2D" uid="uid://e4dj1j2ocag5" path="res://assets/backgrounds (clouds)/babyblue/1.png" id="1_1nwv5"]
 [ext_resource type="Texture2D" uid="uid://c7k85g0243nhl" path="res://assets/backgrounds (clouds)/light blue/1.png" id="1_85ohn"]
@@ -25,10 +25,11 @@
 [ext_resource type="PackedScene" uid="uid://bkn7wfy8ekqlx" path="res://scenes/falling_spike.tscn" id="18_8jspe"]
 [ext_resource type="PackedScene" uid="uid://bbeaqbo44o7gn" path="res://scenes/appearing_spike.tscn" id="19_ea80r"]
 [ext_resource type="PackedScene" uid="uid://baa0i0rdrtjh" path="res://scenes/stage three resources/platform yellow.tscn" id="23_vsnwo"]
-[ext_resource type="PackedScene" uid="uid://di3rlyyq0yn0r" path="res://scenes/stage three resources/bouncing_slime.tscn" id="25_aea4i"]
+[ext_resource type="PackedScene" uid="uid://di3rlyyq0yn0r" path="res://scenes/bouncing_slime.tscn" id="25_aea4i"]
 [ext_resource type="PackedScene" uid="uid://bfwjxcy8idld8" path="res://scenes/stage four resources/ice area.tscn" id="28_8jrcg"]
 [ext_resource type="PackedScene" uid="uid://i8ntsxpimlcw" path="res://scenes/stage four resources/falling_icicle.tscn" id="29_6xa63"]
-[ext_resource type="PackedScene" uid="uid://x6ck7khwhemq" path="res://scenes/stage three resources/slime.tscn" id="29_8mucs"]
+[ext_resource type="PackedScene" uid="uid://x6ck7khwhemq" path="res://scenes/slime.tscn" id="29_8mucs"]
+[ext_resource type="PackedScene" uid="uid://dikaqkgwa4gur" path="res://scenes/pause_menu.tscn" id="30_5kf4s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vjm5p"]
 texture = ExtResource("6_a0o3l")
@@ -689,6 +690,15 @@ scale = Vector2(2.32731, 11.3369)
 [node name="IcicleBasic7" parent="Stage Four - Obstacles" instance=ExtResource("17_notjo")]
 position = Vector2(-213, -2472)
 
+[node name="IcicleBasic8" parent="Stage Four - Obstacles" instance=ExtResource("17_notjo")]
+position = Vector2(-262, -2134)
+
+[node name="IcicleBasic9" parent="Stage Four - Obstacles" instance=ExtResource("17_notjo")]
+position = Vector2(-278, -2134)
+
+[node name="IcicleBasic10" parent="Stage Four - Obstacles" instance=ExtResource("17_notjo")]
+position = Vector2(-246, -2150)
+
 [node name="Player" parent="." instance=ExtResource("8_ixqjo")]
 position = Vector2(208, -2787)
 scale = Vector2(0.522512, 0.522512)
@@ -702,3 +712,5 @@ zoom = Vector2(3, 3)
 limit_bottom = 159
 limit_smoothed = true
 position_smoothing_enabled = true
+
+[node name="Pause Menu" parent="." instance=ExtResource("30_5kf4s")]
