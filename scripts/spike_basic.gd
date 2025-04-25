@@ -7,7 +7,6 @@ func _ready():
 
 #if a player hits the spikes, they get reset back to spawn
 func _on_body_entered(body: Node2D) -> void:
-	print("Player hit the spike!")
 	if body.is_in_group("Player"):
 		body.die() 
 		timer.start()

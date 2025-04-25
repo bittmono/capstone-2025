@@ -13,7 +13,6 @@ func hide_spike():
 
 func _on_trigger_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
-		print("Player triggered the spike!")
 		reveal_spike()
 
 func _on_body_entered(body: Node2D):
