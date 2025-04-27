@@ -24,7 +24,7 @@ func _on_trigger_area_body_exited(body: Node2D) -> void:
 		instructions_label.visible = false
 		player_near = false
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if player_near and Input.is_action_just_pressed("bring_up_instructions"):
 		show_instructions()
 

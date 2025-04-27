@@ -20,6 +20,10 @@ var on_ice = false
 @onready var jump_sound: AudioStreamPlayer2D = $JumpSound #jump.wav
 @onready var death_sound: AudioStreamPlayer2D = $DeathSound #explosion.wav
 
+@onready var light = $PointLight2D
+var in_dark_zone := false
+var flicker_timer = 0
+var flicker_delay = 0.1
 
 func _ready(): 
 	start_position = global_position
@@ -47,12 +51,29 @@ func update_vanish_status():
 		has_played_vanish_animation = true
 		set_collision_mask_value(1, false) #disable movement during vanish
 
+func set_light_visibility(visible: bool):
+	if light:
+		light.visible = visible
+	else:
+		printerr("Check player scene setup")
+
 func ready():
 	is_alive = true
 	has_played_death_animation = false
 	is_vanishing = false
 	has_played_vanish_animation = false
-	animated_sprite.play("idle")
+	animated_sprite.play("idle") 
+	$PointLight2D.visible = false
+	#light.energy = 1.5  # Brighter to contrast with darkness
+	#light.shadow_enabled = true
+	#light.shadow_smooth = 0.5
+	#light.scale = Vector2(2, 2)  # Larger radius
+
+func _process(delta):
+	flicker_timer += delta
+	if flicker_timer > flicker_delay:
+		flicker_timer = 0
+		$PointLight2D.energy = randf_range(4.0, 5.7)
 
 func _physics_process(delta):
 	# Handles vanishing regardless of status
