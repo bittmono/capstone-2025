@@ -22,7 +22,7 @@ func _on_trigger_area_body_exited(body: Node2D) -> void:
 		player_near = false
 		player_body = null #clears player ref
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if player_near and Input.is_action_just_pressed("send_player_to_spawn"):
 		print("z key pressed") #debug
 		if player_body != null:

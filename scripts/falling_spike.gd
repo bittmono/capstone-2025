@@ -17,7 +17,6 @@ func _on_trigger_area_body_entered(body: Node2D) -> void:
 func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("Player"):
 		has_hit_player = true
-		print("Spike hit the player!")
 		body.die()
 		timer.start()
 	else:
