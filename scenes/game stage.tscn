@@ -23,10 +23,10 @@
 [ext_resource type="PackedScene" uid="uid://bkn7wfy8ekqlx" path="res://scenes/falling_spike.tscn" id="18_8jspe"]
 [ext_resource type="PackedScene" uid="uid://bbeaqbo44o7gn" path="res://scenes/appearing_spike.tscn" id="19_ea80r"]
 [ext_resource type="PackedScene" uid="uid://baa0i0rdrtjh" path="res://scenes/stage three resources/platform yellow.tscn" id="23_vsnwo"]
-[ext_resource type="PackedScene" uid="uid://di3rlyyq0yn0r" path="res://scenes/stage three resources/bouncing_slime.tscn" id="25_aea4i"]
+[ext_resource type="PackedScene" uid="uid://di3rlyyq0yn0r" path="res://scenes/bouncing_slime.tscn" id="25_aea4i"]
 [ext_resource type="PackedScene" uid="uid://bfwjxcy8idld8" path="res://scenes/stage four resources/ice area.tscn" id="28_8jrcg"]
 [ext_resource type="PackedScene" uid="uid://i8ntsxpimlcw" path="res://scenes/stage four resources/falling_icicle.tscn" id="29_6xa63"]
-[ext_resource type="PackedScene" uid="uid://x6ck7khwhemq" path="res://scenes/stage three resources/slime.tscn" id="29_8mucs"]
+[ext_resource type="PackedScene" uid="uid://x6ck7khwhemq" path="res://scenes/slime.tscn" id="29_8mucs"]
 [ext_resource type="PackedScene" uid="uid://dikaqkgwa4gur" path="res://scenes/pause_menu.tscn" id="30_5kf4s"]
 [ext_resource type="Script" path="res://scripts/stone area.gd" id="35_7xqfv"]
 
@@ -767,7 +767,7 @@ position = Vector2(-8, 128)
 shape = SubResource("WorldBoundaryShape2D_h4wbb")
 
 [node name="Player" parent="." instance=ExtResource("8_ixqjo")]
-position = Vector2(2, -2717)
+position = Vector2(-162, 89)
 scale = Vector2(0.522512, 0.522512)
 collision_layer = 3
 collision_mask = 1
