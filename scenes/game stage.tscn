@@ -288,10 +288,10 @@ script = ExtResource("1_3dbju")
 editor_description = "when making changes in the editor, toggle vision ON
 when playtesting or exporting, toggle vision OFF
 "
+visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="Main Menu" parent="." instance=ExtResource("3_hq6ci")]
-visible = false
 offset_left = 578.0
 offset_top = 404.0
 offset_right = 578.0
