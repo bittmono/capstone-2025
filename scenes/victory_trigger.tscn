@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2tmjdw1y61dl"]
+
+[ext_resource type="Script" path="res://scripts/victory_trigger.gd" id="1_m5mbr"]
+[ext_resource type="AudioStream" uid="uid://41t7swsrmbur" path="res://assets/sounds (others)/victory-song.mp3" id="2_a1uf3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qbcnw"]
+size = Vector2(37, 38)
+
+[node name="VictoryTrigger" type="Area2D"]
+script = ExtResource("1_m5mbr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -9)
+shape = SubResource("RectangleShape2D_qbcnw")
+
+[node name="VictorySong" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_a1uf3")
+bus = &"SFX"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

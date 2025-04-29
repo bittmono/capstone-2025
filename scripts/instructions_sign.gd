@@ -14,7 +14,7 @@ func _ready() -> void:
 
 func _on_trigger_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"): #changed so Player is not in folder
-		label.text = "Welcome to the game!\nPress esc to pause\n Press WASD or Arrow Keys to move!"
+		label.text = "Welcome to the game!\nPress esc to pause\n Press W-A-S-D or Arrow Keys to move!"
 		label.visible = true
 		panel.visible = true
 		player_near = true
@@ -32,5 +32,5 @@ func _process(_delta: float) -> void:
 func show_instructions() -> void: 
 	label.visible = true
 	panel.visible = true
-	label.text = "Here are the instructions:\nMove with WASD\nPress ESC to quit " #eventual instructions will be here, 
+	label.text = "Here are the instructions:\nMove with W-A-S-D\nPress ESC to quit " #eventual instructions will be here, 
 	  #could even be a splash screen.
