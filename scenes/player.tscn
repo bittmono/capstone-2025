@@ -292,8 +292,10 @@ shape = SubResource("RectangleShape2D_um6o3")
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_xvnif")
-volume_db = -20.8
+volume_db = -17.249
+bus = &"SFX"
 
 [node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_8en6e")
 volume_db = -17.249
+bus = &"SFX"

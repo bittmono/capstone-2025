@@ -1,24 +1,27 @@
 extends Node2D
 
 @onready var timer = $Timer 
-@onready var label = $Label  # Reference to the Label
+@onready var label: Label = $Panel/Label
+@onready var panel: Panel = $Panel #reference to the panel
+
 var player_near: bool = false  # Track if player is near the sign
 var player_body: Node2D = null
 
 func _ready() -> void:
-	label.visible = false
+	panel.visible = false
 	label.text = ""
 
 func _on_trigger_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
-		label.text = "Press Z for additional info"  # Set prompt text
-		label.visible = true  # Show prompt
+		label.text = "Press Z for additional information."  # Set prompt text
+		panel.visible = true  # Show prompt
+		label.visible = true
 		player_near = true
 		player_body = body #stores player ref
 
 func _on_trigger_area_body_exited(body: Node2D) -> void:
 	if body.is_in_group("Player"):
-		label.visible = false  # Hide prompt when player leaves
+		panel.visible = false  # Hide prompt when player leaves
 		player_near = false
 		player_body = null #clears player ref
 

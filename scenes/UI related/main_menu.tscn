@@ -1,0 +1,131 @@
+[gd_scene load_steps=12 format=3 uid="uid://d3mkeafjdr7ua"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_8tlxj"]
+[ext_resource type="Texture2D" uid="uid://e4dj1j2ocag5" path="res://assets/backgrounds (clouds)/babyblue/1.png" id="1_vap2x"]
+[ext_resource type="Texture2D" uid="uid://bqsjk3dwa4ald" path="res://assets/backgrounds (clouds)/babyblue/4.png" id="3_bb8s4"]
+[ext_resource type="Shader" path="res://scenes/UI related/main_menu.gdshader" id="3_uuwg4"]
+[ext_resource type="Texture2D" uid="uid://dki2mkxmw8teq" path="res://assets/backgrounds (clouds)/babyblue/5.png" id="5_ecpfs"]
+[ext_resource type="Shader" path="res://scenes/UI related/main_menu2.gdshader" id="5_se1rh"]
+[ext_resource type="FontFile" uid="uid://drbfa0ogtpv66" path="res://assets/fonts/Stacked pixel.ttf" id="6_uypv7"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x7a75"]
+texture = ExtResource("1_vap2x")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aosyg"]
+shader = ExtResource("3_uuwg4")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oppud"]
+shader = ExtResource("5_se1rh")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nnweo"]
+bg_color = Color(0.129412, 0.129412, 0.129412, 0.67451)
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8tlxj")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_x7a75")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_aosyg")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_bb8s4")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_oppud")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_ecpfs")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.5
+offset_top = -11.5
+offset_right = 65.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_spacing = 1
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("6_uypv7")
+theme_override_font_sizes/font_size = 60
+text = "Echoes of Failure
+"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -102.0
+offset_top = -217.0
+offset_right = 102.0
+offset_bottom = -68.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 10
+
+[node name="Start" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/outline_size = 20
+theme_override_constants/h_separation = 30
+theme_override_fonts/font = ExtResource("6_uypv7")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_nnweo")
+text = "Start"
+
+[node name="Credits" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/outline_size = 20
+theme_override_constants/h_separation = 30
+theme_override_fonts/font = ExtResource("6_uypv7")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_nnweo")
+text = "Credits"
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/outline_size = 20
+theme_override_constants/h_separation = 30
+theme_override_fonts/font = ExtResource("6_uypv7")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_nnweo")
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

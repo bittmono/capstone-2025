@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dy6i5hwt877aw"
+path="res://.godot/imported/winsquare-6993.mp3-e08f506b814f81131281eb0d3ee3e62c.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds (others)/winsquare-6993.mp3"
+dest_files=["res://.godot/imported/winsquare-6993.mp3-e08f506b814f81131281eb0d3ee3e62c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
