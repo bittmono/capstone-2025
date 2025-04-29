@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=4 uid="uid://bt3ln3k2vtwjr"]
+[gd_scene load_steps=38 format=4 uid="uid://bt3ln3k2vtwjr"]
 
 [ext_resource type="Texture2D" uid="uid://e4dj1j2ocag5" path="res://assets/backgrounds (clouds)/babyblue/1.png" id="1_1nwv5"]
 [ext_resource type="Script" path="res://scripts/game_stage.gd" id="1_3dbju"]
@@ -28,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://i8ntsxpimlcw" path="res://scenes/stage four resources/falling_icicle.tscn" id="29_6xa63"]
 [ext_resource type="PackedScene" uid="uid://x6ck7khwhemq" path="res://scenes/slime.tscn" id="29_8mucs"]
 [ext_resource type="PackedScene" uid="uid://dikaqkgwa4gur" path="res://scenes/pause_menu.tscn" id="30_5kf4s"]
+[ext_resource type="PackedScene" uid="uid://b2tmjdw1y61dl" path="res://scenes/victory_trigger.tscn" id="30_s8ygj"]
 [ext_resource type="Script" path="res://scripts/stone area.gd" id="35_7xqfv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vjm5p"]
@@ -249,6 +250,7 @@ script = ExtResource("1_3dbju")
 editor_description = "when making changes in the editor, toggle vision ON
 when playtesting or exporting, toggle vision OFF
 "
+visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="Pause Menu" parent="." instance=ExtResource("30_5kf4s")]
@@ -650,6 +652,7 @@ position = Vector2(57, -1887)
 [node name="Ice Area" parent="Obstacles/Stage Four - Obstacles" instance=ExtResource("28_8jrcg")]
 position = Vector2(50, -1990)
 scale = Vector2(1.81231, 1.79649)
+audio_bus_name = &"Music"
 
 [node name="Ice Area2" parent="Obstacles/Stage Four - Obstacles" instance=ExtResource("28_8jrcg")]
 position = Vector2(-202, -2005)
@@ -767,7 +770,7 @@ position = Vector2(-8, 128)
 shape = SubResource("WorldBoundaryShape2D_h4wbb")
 
 [node name="Player" parent="." instance=ExtResource("8_ixqjo")]
-position = Vector2(-162, 89)
+position = Vector2(105, -3896)
 scale = Vector2(0.522512, 0.522512)
 collision_layer = 3
 collision_mask = 1
@@ -795,9 +798,13 @@ scale = Vector2(0.978763, 1)
 script = ExtResource("35_7xqfv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="stone"]
-position = Vector2(-423, -336.5)
+position = Vector2(-421.961, -305)
 shape = SubResource("RectangleShape2D_0weth")
 debug_color = Color(0.65098, 0, 0.188235, 0.109804)
+
+[node name="VictoryTrigger" parent="stone" instance=ExtResource("30_s8ygj")]
+position = Vector2(-429.113, -775)
+scale = Vector2(1.0217, 1)
 
 [connection signal="body_entered" from="stone" to="stone" method="_on_body_entered"]
 [connection signal="body_exited" from="stone" to="stone" method="_on_body_exited"]
