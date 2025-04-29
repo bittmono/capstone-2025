@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=4 uid="uid://bt3ln3k2vtwjr"]
+[gd_scene load_steps=43 format=4 uid="uid://bt3ln3k2vtwjr"]
 
 [ext_resource type="Texture2D" uid="uid://e4dj1j2ocag5" path="res://assets/backgrounds (clouds)/babyblue/1.png" id="1_1nwv5"]
 [ext_resource type="Script" path="res://scripts/game_stage.gd" id="1_3dbju"]
@@ -26,10 +26,11 @@
 [ext_resource type="PackedScene" uid="uid://baa0i0rdrtjh" path="res://scenes/stage three resources/platform yellow.tscn" id="23_vsnwo"]
 [ext_resource type="PackedScene" uid="uid://bfwjxcy8idld8" path="res://scenes/stage four resources/ice area.tscn" id="28_8jrcg"]
 [ext_resource type="PackedScene" uid="uid://i8ntsxpimlcw" path="res://scenes/stage four resources/falling_icicle.tscn" id="29_6xa63"]
-[ext_resource type="PackedScene" uid="uid://x6ck7khwhemq" path="res://scenes/slime.tscn" id="29_8mucs"]
+[ext_resource type="PackedScene" uid="uid://x6ck7khwhemq" path="res://scenes/death_slime.tscn" id="29_8mucs"]
 [ext_resource type="PackedScene" uid="uid://bkn7wfy8ekqlx" path="res://scenes/falling_spike.tscn" id="29_ywqw5"]
 [ext_resource type="PackedScene" uid="uid://dikaqkgwa4gur" path="res://scenes/UI related/pause_menu.tscn" id="30_5kf4s"]
 [ext_resource type="PackedScene" uid="uid://di3rlyyq0yn0r" path="res://scenes/bouncing_slime.tscn" id="30_viuqr"]
+[ext_resource type="PackedScene" uid="uid://b2tmjdw1y61dl" path="res://scenes/victory_trigger.tscn" id="32_44br2"]
 [ext_resource type="Script" path="res://scripts/stone area.gd" id="35_7xqfv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vjm5p"]
@@ -959,7 +960,7 @@ position = Vector2(-8, 128)
 shape = SubResource("WorldBoundaryShape2D_h4wbb")
 
 [node name="Player" parent="." instance=ExtResource("8_ixqjo")]
-position = Vector2(198, -2718)
+position = Vector2(102, -3892)
 scale = Vector2(0.522512, 0.522512)
 collision_layer = 3
 collision_mask = 1
@@ -987,9 +988,13 @@ scale = Vector2(0.978763, 1)
 script = ExtResource("35_7xqfv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="stone"]
-position = Vector2(-392.843, -336.5)
+position = Vector2(-383.137, -335)
 shape = SubResource("RectangleShape2D_0weth")
 debug_color = Color(0.65098, 0, 0.188235, 0.109804)
+
+[node name="VictoryTrigger" parent="stone" instance=ExtResource("32_44br2")]
+position = Vector2(-431.156, -773)
+scale = Vector2(1, 1)
 
 [connection signal="body_entered" from="stone" to="stone" method="_on_body_entered"]
 [connection signal="body_exited" from="stone" to="stone" method="_on_body_exited"]
