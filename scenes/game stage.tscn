@@ -772,7 +772,6 @@ position = Vector2(57, -1887)
 [node name="Ice Area" parent="Obstacles/Stage Four - Obstacles" instance=ExtResource("28_8jrcg")]
 position = Vector2(50, -1990)
 scale = Vector2(1.81231, 1.79649)
-audio_bus_name = &"Music"
 
 [node name="Ice Area2" parent="Obstacles/Stage Four - Obstacles" instance=ExtResource("28_8jrcg")]
 position = Vector2(-202, -2005)
@@ -991,10 +990,6 @@ script = ExtResource("35_7xqfv")
 position = Vector2(-392.843, -336.5)
 shape = SubResource("RectangleShape2D_0weth")
 debug_color = Color(0.65098, 0, 0.188235, 0.109804)
-
-[node name="VictoryTrigger" parent="stone" instance=ExtResource("30_s8ygj")]
-position = Vector2(-429.113, -775)
-scale = Vector2(1.0217, 1)
 
 [connection signal="body_entered" from="stone" to="stone" method="_on_body_entered"]
 [connection signal="body_exited" from="stone" to="stone" method="_on_body_exited"]
