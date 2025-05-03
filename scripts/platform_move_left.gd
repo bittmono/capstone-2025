@@ -3,7 +3,7 @@ extends AnimatableBody2D
 var triggered = false
 var move_speed = 490
 var move_direction = Vector2.LEFT  
-var max_distance = 53              # Maximum distance to move
+var max_distance = 100              # Maximum distance to move
 var distance_moved = 0             # Track how far the platform has moved
 
 # Ensure the signal is only connected once

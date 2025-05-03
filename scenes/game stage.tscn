@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=4 uid="uid://bt3ln3k2vtwjr"]
+[gd_scene load_steps=44 format=4 uid="uid://bt3ln3k2vtwjr"]
 
 [ext_resource type="Texture2D" uid="uid://e4dj1j2ocag5" path="res://assets/backgrounds (clouds)/babyblue/1.png" id="1_1nwv5"]
 [ext_resource type="Script" path="res://scripts/game_stage.gd" id="1_3dbju"]
@@ -26,10 +26,11 @@
 [ext_resource type="PackedScene" uid="uid://t46mlqw6mk3h" path="res://scenes/stage four resources/icicle_basic.tscn" id="29_1q5pu"]
 [ext_resource type="PackedScene" uid="uid://i8ntsxpimlcw" path="res://scenes/stage four resources/falling_icicle.tscn" id="29_6xa63"]
 [ext_resource type="PackedScene" uid="uid://x6ck7khwhemq" path="res://scenes/slime.tscn" id="29_8mucs"]
-[ext_resource type="PackedScene" uid="uid://bkn7wfy8ekqlx" path="res://scenes/falling_spike.tscn" id="29_ywqw5"]
+[ext_resource type="PackedScene" uid="uid://di3rlyyq0yn0r" path="res://scenes/bouncing_slime_dupe.tscn" id="29_ct1vh"]
+[ext_resource type="PackedScene" uid="uid://bkn7wfy8ekqlx" path="res://scenes/stage two resources/falling_spike_fixed.tscn" id="29_ywqw5"]
 [ext_resource type="PackedScene" uid="uid://dikaqkgwa4gur" path="res://scenes/UI related/pause_menu.tscn" id="30_5kf4s"]
 [ext_resource type="PackedScene" uid="uid://ckpwdlmn4axxd" path="res://scenes/stage two resources/spike_basic.tscn" id="30_5vlxh"]
-[ext_resource type="PackedScene" uid="uid://di3rlyyq0yn0r" path="res://scenes/bouncing_slime.tscn" id="30_viuqr"]
+[ext_resource type="PackedScene" uid="uid://0srpvg8u2ftu" path="res://scenes/stage 5/victory_trigger.tscn" id="33_5lk3g"]
 [ext_resource type="PackedScene" uid="uid://cconua6dcpkbq" path="res://scenes/stage two resources/appearing_spike_fixed.tscn" id="33_vlp87"]
 [ext_resource type="Script" path="res://scripts/stone area.gd" id="35_7xqfv"]
 
@@ -691,13 +692,13 @@ position = Vector2(113, -565)
 position = Vector2(41, -848)
 
 [node name="FallingSpike" parent="Obstacles/Stage Two - Obstacles" instance=ExtResource("29_ywqw5")]
-position = Vector2(185, -848)
-
-[node name="FallingSpike2" parent="Obstacles/Stage Two - Obstacles" instance=ExtResource("29_ywqw5")]
 position = Vector2(-151, -1199)
 
-[node name="FallingSpike3" parent="Obstacles/Stage Two - Obstacles" instance=ExtResource("29_ywqw5")]
-position = Vector2(90, -1214)
+[node name="FallingSpike2" parent="Obstacles/Stage Two - Obstacles" instance=ExtResource("29_ywqw5")]
+position = Vector2(89, -1215)
+
+[node name="FallingSpike4" parent="Obstacles/Stage Two - Obstacles" instance=ExtResource("29_ywqw5")]
+position = Vector2(185, -847)
 
 [node name="appearing_spike_fixed" parent="Obstacles/Stage Two - Obstacles" instance=ExtResource("33_vlp87")]
 position = Vector2(-103, -444)
@@ -731,27 +732,26 @@ position = Vector2(12, -1605)
 [node name="death_slime3" parent="Obstacles/Stage Three - Obstacles" instance=ExtResource("29_8mucs")]
 position = Vector2(42, -1445)
 
-[node name="appearing_spike_fixed" parent="Obstacles/Stage Three - Obstacles" instance=ExtResource("33_vlp87")]
-position = Vector2(-55, -1452)
-
 [node name="Teleporting Sign" parent="Obstacles/Stage Three - Obstacles" instance=ExtResource("13_kofy3")]
 position = Vector2(-279, -1404)
 
-[node name="bouncing_slime" parent="Obstacles/Stage Three - Obstacles" instance=ExtResource("30_viuqr")]
-position = Vector2(-71, -1302)
+[node name="appearing_spike_fixed" parent="Obstacles/Stage Three - Obstacles" instance=ExtResource("33_vlp87")]
+position = Vector2(-55, -1452)
 
-[node name="bouncing_slime2" parent="Obstacles/Stage Three - Obstacles" instance=ExtResource("30_viuqr")]
-position = Vector2(114, -1797)
+[node name="bouncing_slime6" parent="Obstacles/Stage Three - Obstacles" instance=ExtResource("29_ct1vh")]
+position = Vector2(185, -1477)
 
-[node name="bouncing_slime3" parent="Obstacles/Stage Three - Obstacles" instance=ExtResource("30_viuqr")]
-position = Vector2(169, -1477)
-scale = Vector2(1, 0.923363)
+[node name="bouncing_slime7" parent="Obstacles/Stage Three - Obstacles" instance=ExtResource("29_ct1vh")]
+position = Vector2(-55, -1302)
 
-[node name="bouncing_slime4" parent="Obstacles/Stage Three - Obstacles" instance=ExtResource("30_viuqr")]
-position = Vector2(171, -1797)
+[node name="bouncing_slime8" parent="Obstacles/Stage Three - Obstacles" instance=ExtResource("29_ct1vh")]
+position = Vector2(-183, -1781)
 
-[node name="bouncing_slime5" parent="Obstacles/Stage Three - Obstacles" instance=ExtResource("30_viuqr")]
-position = Vector2(-199, -1781)
+[node name="bouncing_slime9" parent="Obstacles/Stage Three - Obstacles" instance=ExtResource("29_ct1vh")]
+position = Vector2(89, -1797)
+
+[node name="bouncing_slime10" parent="Obstacles/Stage Three - Obstacles" instance=ExtResource("29_ct1vh")]
+position = Vector2(201, -1797)
 
 [node name="FallingSpike2" parent="Obstacles/Stage Three - Obstacles" instance=ExtResource("29_ywqw5")]
 position = Vector2(-7, -1535)
@@ -764,6 +764,10 @@ position = Vector2(57, -1887)
 
 [node name="appearing_spike_fixed2" parent="Obstacles/Stage Three - Obstacles" instance=ExtResource("33_vlp87")]
 position = Vector2(-29, -1806)
+
+[node name="FallingSpike" parent="Obstacles/Stage Three - Obstacles" instance=ExtResource("29_ywqw5")]
+visible = false
+position = Vector2(-7, -1535)
 
 [node name="Stage Four - Obstacles" type="Node2D" parent="Obstacles"]
 
@@ -882,6 +886,10 @@ scale = Vector2(5.417, 4.48762)
 
 [node name="Stage Five - Obstacles" type="Node2D" parent="Obstacles"]
 
+[node name="victory_trigger" parent="Obstacles/Stage Five - Obstacles" instance=ExtResource("33_5lk3g")]
+position = Vector2(-7, -3952)
+scale = Vector2(2.30127, 2.48966)
+
 [node name="FallingSpike" parent="Obstacles/Stage Five - Obstacles" instance=ExtResource("29_ywqw5")]
 position = Vector2(224, -2879)
 scale = Vector2(0.978763, 1)
@@ -921,34 +929,16 @@ position = Vector2(-66, -3550)
 position = Vector2(-115, -3487)
 
 [node name="FallingSpike13" parent="Obstacles/Stage Five - Obstacles" instance=ExtResource("29_ywqw5")]
-position = Vector2(-263, -3775)
+position = Vector2(-262, -3703)
 
 [node name="FallingSpike14" parent="Obstacles/Stage Five - Obstacles" instance=ExtResource("29_ywqw5")]
-position = Vector2(-231, -3775)
+position = Vector2(-238, -3703)
 
-[node name="bouncing_slime" parent="Obstacles/Stage Five - Obstacles" instance=ExtResource("30_viuqr")]
-position = Vector2(-229, -3078)
+[node name="FallingSpike15" parent="Obstacles/Stage Five - Obstacles" instance=ExtResource("29_ywqw5")]
+position = Vector2(-166, -3703)
 
-[node name="bouncing_slime2" parent="Obstacles/Stage Five - Obstacles" instance=ExtResource("30_viuqr")]
-position = Vector2(-102, -3205)
-
-[node name="bouncing_slime3" parent="Obstacles/Stage Five - Obstacles" instance=ExtResource("30_viuqr")]
-position = Vector2(90, -3029)
-
-[node name="bouncing_slime4" parent="Obstacles/Stage Five - Obstacles" instance=ExtResource("30_viuqr")]
-position = Vector2(153, -2934)
-
-[node name="bouncing_slime5" parent="Obstacles/Stage Five - Obstacles" instance=ExtResource("30_viuqr")]
-position = Vector2(90, -3430)
-
-[node name="bouncing_slime6" parent="Obstacles/Stage Five - Obstacles" instance=ExtResource("30_viuqr")]
-position = Vector2(-177, -3430)
-
-[node name="bouncing_slime7" parent="Obstacles/Stage Five - Obstacles" instance=ExtResource("30_viuqr")]
-position = Vector2(-292, -3158)
-
-[node name="bouncing_slime8" parent="Obstacles/Stage Five - Obstacles" instance=ExtResource("30_viuqr")]
-position = Vector2(-214, -3316)
+[node name="FallingSpike16" parent="Obstacles/Stage Five - Obstacles" instance=ExtResource("29_ywqw5")]
+position = Vector2(-119, -3703)
 
 [node name="SpikeBasic2" parent="Obstacles/Stage Five - Obstacles" instance=ExtResource("30_5vlxh")]
 position = Vector2(-79, -3590)
@@ -1016,8 +1006,14 @@ position = Vector2(-223, -3798)
 [node name="SpikeBasic22" parent="Obstacles/Stage Five - Obstacles" instance=ExtResource("30_5vlxh")]
 position = Vector2(-255, -3798)
 
+[node name="bouncing_slime" parent="Obstacles/Stage Five - Obstacles" instance=ExtResource("29_ct1vh")]
+position = Vector2(-230, -3077)
+
+[node name="bouncing_slime2" parent="Obstacles/Stage Five - Obstacles" instance=ExtResource("29_ct1vh")]
+position = Vector2(-294, -3159)
+
 [node name="Player" parent="." instance=ExtResource("8_ixqjo")]
-position = Vector2(18, -382)
+position = Vector2(86, -2717)
 scale = Vector2(0.522512, 0.522512)
 collision_layer = 3
 collision_mask = 1
@@ -1060,7 +1056,7 @@ scale = Vector2(0.978763, 1)
 script = ExtResource("35_7xqfv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="stone"]
-position = Vector2(-392.332, -338)
+position = Vector2(-486.328, -684)
 shape = SubResource("RectangleShape2D_0weth")
 debug_color = Color(0.65098, 0, 0.188235, 0.109804)
 

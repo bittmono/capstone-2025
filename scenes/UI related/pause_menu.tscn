@@ -1,11 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://dikaqkgwa4gur"]
+[gd_scene load_steps=4 format=3 uid="uid://dikaqkgwa4gur"]
 
 [ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_1aeem"]
 [ext_resource type="FontFile" uid="uid://drbfa0ogtpv66" path="res://assets/fonts/Stacked pixel.ttf" id="2_v3x6t"]
-[ext_resource type="Script" path="res://scripts/volumeslider.gd" id="3_boj2x"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_netgj"]
 font_size = 70
+outline_size = 30
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Pause Menu" type="CanvasLayer"]
 process_mode = 3
@@ -17,6 +18,7 @@ offset_top = 80.0
 offset_right = 661.0
 offset_bottom = 138.0
 size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 40
 theme_override_constants/outline_size = 40
 theme_override_fonts/font = ExtResource("2_v3x6t")
@@ -33,6 +35,7 @@ alignment = 1
 [node name="Resume" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_constants/outline_size = 25
 theme_override_fonts/font = ExtResource("2_v3x6t")
 theme_override_font_sizes/font_size = 45
 action_mode = 0
@@ -41,6 +44,7 @@ text = "Resume"
 [node name="Settings" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_constants/outline_size = 25
 theme_override_fonts/font = ExtResource("2_v3x6t")
 theme_override_font_sizes/font_size = 45
 action_mode = 0
@@ -49,6 +53,7 @@ text = "Settings"
 [node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_constants/outline_size = 25
 theme_override_fonts/font = ExtResource("2_v3x6t")
 theme_override_font_sizes/font_size = 45
 action_mode = 0
@@ -85,8 +90,11 @@ offset_left = 1.5
 offset_top = -67.0
 offset_right = 264.5
 offset_bottom = -9.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 40
 theme_override_constants/outline_size = 40
+theme_override_constants/shadow_outline_size = 0
 theme_override_fonts/font = ExtResource("2_v3x6t")
 text = "Settings"
 label_settings = SubResource("LabelSettings_netgj")
@@ -105,6 +113,7 @@ offset_right = -200.0
 offset_bottom = -101.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/outline_size = 30
 theme_override_fonts/font = ExtResource("2_v3x6t")
 theme_override_font_sizes/font_size = 40
 text = "Master
@@ -124,6 +133,7 @@ offset_right = -203.0
 offset_bottom = -31.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/outline_size = 30
 theme_override_fonts/font = ExtResource("2_v3x6t")
 theme_override_font_sizes/font_size = 40
 text = "Music
@@ -136,13 +146,14 @@ offset_left = -321.5
 offset_top = 191.0
 offset_right = -58.5
 offset_bottom = 224.0
+theme_override_constants/outline_size = 30
 theme_override_fonts/font = ExtResource("2_v3x6t")
 theme_override_font_sizes/font_size = 40
 text = "Sound Effects
 "
 horizontal_alignment = 1
 
-[node name="slider 1" type="HSlider" parent="Settings"]
+[node name="master slider" type="HSlider" parent="Settings"]
 layout_mode = 2
 offset_left = 0.5
 offset_top = 52.0
@@ -150,10 +161,8 @@ offset_right = 263.5
 offset_bottom = 68.0
 max_value = 1.0
 step = 0.001
-script = ExtResource("3_boj2x")
-bus_name = "Master"
 
-[node name="slider 2" type="HSlider" parent="Settings"]
+[node name="music slider" type="HSlider" parent="Settings"]
 layout_mode = 2
 offset_left = 0.5
 offset_top = 128.0
@@ -161,10 +170,8 @@ offset_right = 263.5
 offset_bottom = 144.0
 max_value = 1.0
 step = 0.001
-script = ExtResource("3_boj2x")
-bus_name = "Music"
 
-[node name="slider 3" type="HSlider" parent="Settings"]
+[node name="sfx slider" type="HSlider" parent="Settings"]
 layout_mode = 2
 offset_left = 0.5
 offset_top = 200.0
@@ -172,8 +179,6 @@ offset_right = 263.5
 offset_bottom = 216.0
 max_value = 1.0
 step = 0.001
-script = ExtResource("3_boj2x")
-bus_name = "SFX"
 
 [node name="Back" type="Button" parent="Settings"]
 layout_mode = 2
