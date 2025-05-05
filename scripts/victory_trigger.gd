@@ -1,5 +1,6 @@
 extends Area2D
 
+@onready var fireworkgreen = $fireworks/AnimatedSprite2D1
 @onready var victory_song = $AudioStreamPlayer2D
 @onready var canvas_modulate = $"../../../CanvasModulate"
 
@@ -12,6 +13,9 @@ func _on_body_entered(body):
 			canvas_modulate.visible = false
 			Music.stop()
 			victory_song.play()
+			
+			#play fireworks
+			fireworkgreen.play("green")
 			
 			#wait for victory song to finish playing
 			get_tree().create_timer(4.0).timeout

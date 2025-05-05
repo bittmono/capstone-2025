@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/falling_spike.gd" id="1_ym6tk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qjkah"]
-size = Vector2(14.1284, 12.2134)
+size = Vector2(6.28492, 34.2144)
 
 [node name="FallingSpike" type="RigidBody2D" groups=["Player"]]
 lock_rotation = true
@@ -24,9 +24,10 @@ rotation = 3.14062
 polygon = PackedVector2Array(-37, 11, -29, -3, -21, 11)
 
 [node name="TriggerArea" type="Area2D" parent="."]
+position = Vector2(0, 16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerArea" groups=["Player"]]
-position = Vector2(-0.445724, 28.2354)
+position = Vector2(-1.00929, 32.4999)
 rotation = -3.1354
 scale = Vector2(3.18413, -2.25047)
 shape = SubResource("RectangleShape2D_qjkah")
