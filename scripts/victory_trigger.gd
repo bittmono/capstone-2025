@@ -1,14 +1,8 @@
 extends Area2D
 
-signal victory_reached
-
-
-@onready var victory_song: AudioStreamPlayer2D = $VictorySong
-@onready var canvas_modulate: CanvasModulate = $"../../CanvasModulate"
-
-
-func _ready():
-	print("Victory song node: ", victory_song)
+@onready var fireworkgreen = $fireworks/AnimatedSprite2D1
+@onready var victory_song = $AudioStreamPlayer2D
+@onready var canvas_modulate = $"../../../CanvasModulate"
 
 func _on_body_entered(body):
 	if body.is_in_group("Player"):
@@ -21,5 +15,9 @@ func _on_body_entered(body):
 			Music.stop()
 			victory_song.play()
 			
+			#play fireworks
+			fireworkgreen.play("green")
+			
+			#wait for victory song to finish playing
 			get_tree().create_timer(4.0).timeout
 			emit_signal("victory_reached")
