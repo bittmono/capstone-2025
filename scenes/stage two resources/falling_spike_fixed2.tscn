@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bkn7wfy8ekqlx"]
+[gd_scene load_steps=3 format=3 uid="uid://bkn7wfy8ekqlx"]
 
-[ext_resource type="Texture2D" uid="uid://cayklemintmd1" path="res://assets/sprites (others)/spikes-for-game.png" id="1_lcyea"]
-[ext_resource type="Script" path="res://scripts/falling_spike.gd" id="1_ym6tk"]
+[ext_resource type="Texture2D" uid="uid://cayklemintmd1" path="res://assets/sprites (others)/spikes-for-game.png" id="1_nnpvv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qjkah"]
 size = Vector2(7.10844, 34.8472)
@@ -9,12 +8,11 @@ size = Vector2(7.10844, 34.8472)
 [node name="FallingSpike" type="RigidBody2D" groups=["OneShot"]]
 lock_rotation = true
 freeze = true
-script = ExtResource("1_ym6tk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 3.13613
 scale = Vector2(1, 1.00409)
-texture = ExtResource("1_lcyea")
+texture = ExtResource("1_nnpvv")
 region_enabled = true
 region_rect = Rect2(12.6556, 43.2966, 16.518, 23.6998)
 

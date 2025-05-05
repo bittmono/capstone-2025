@@ -20,10 +20,13 @@ var on_ice = false
 @onready var jump_sound: AudioStreamPlayer2D = $JumpSound #jump.wav
 @onready var death_sound: AudioStreamPlayer2D = $DeathSound #explosion.wav
 
+
 @onready var light = $PointLight2D
 var in_dark_zone := false
 var flicker_timer = 0
 var flicker_delay = 0.1
+
+
 
 func _ready(): 
 	start_position = global_position

@@ -1,7 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://cvdyg2sayqg8"]
+[gd_scene load_steps=7 format=3 uid="uid://cvdyg2sayqg8"]
 
 [ext_resource type="Texture2D" uid="uid://dl455aeeo0lgt" path="res://assets/sprites (brackeys)/world_tileset.png" id="1_3l6um"]
 [ext_resource type="Script" path="res://scripts/teleporting_sign.gd" id="1_q1exh"]
+[ext_resource type="FontFile" uid="uid://drbfa0ogtpv66" path="res://assets/fonts/Stacked pixel.ttf" id="2_plc6e"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_plik7"]
+bg_color = Color(0.2, 0.2, 0.2, 0.784314)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ybs73"]
+bg_color = Color(0.2, 0.2, 0.2, 0.537255)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_color = Color(0.0475577, 0.0475576, 0.0475576, 0.6)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d3ky2"]
 size = Vector2(15, 15)
@@ -9,11 +25,24 @@ size = Vector2(15, 15)
 [node name="Teleporting Sign" type="Node2D"]
 script = ExtResource("1_q1exh")
 
-[node name="Label" type="Label" parent="."]
-offset_left = -33.0
-offset_top = -64.0
+[node name="Panel" type="Panel" parent="."]
+offset_left = -8.0
+offset_top = -9.0
 offset_right = 7.0
-offset_bottom = -41.0
+offset_bottom = 7.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_plik7")
+
+[node name="Label" type="Label" parent="Panel"]
+offset_left = -49.0
+offset_top = -52.0
+offset_right = 70.0
+offset_bottom = -35.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_plc6e")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ybs73")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_3l6um")
