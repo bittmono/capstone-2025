@@ -20,7 +20,7 @@ func _on_body_entered(body: Node) -> void:
 		body.die()
 		timer.start()
 	else:
-		await get_tree().create_timer(0.5).timeout
+		await get_tree().create_timer(0.9).timeout
 		if not has_hit_player:
 			queue_free()
 

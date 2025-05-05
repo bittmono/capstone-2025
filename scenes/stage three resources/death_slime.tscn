@@ -67,5 +67,8 @@ target_position = Vector2(11, 0)
 position = Vector2(0, -7)
 target_position = Vector2(-11, 0)
 
+[node name="Timer" type="Timer" parent="."]
+
 [connection signal="body_entered" from="Killzone" to="." method="_on_killzone_body_entered"]
 [connection signal="ready" from="Killzone" to="." method="_on_killzone_ready"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,15 +1,19 @@
 extends Area2D
 
-@onready var victory_song: AudioStreamPlayer2D = $VictorySong
+@onready var victory_song = $AudioStreamPlayer2D
+@onready var canvas_modulate = $"../../../CanvasModulate"
 
-# when the player enters the victory zone, it'll trigger the victory sound.
-func _on_body_entered(body: Node2D) -> void:
+func _on_body_entered(body):
 	if body.is_in_group("Player"):
-		# if the song isn't already playing, play the song 
-		# (prevents repeating sound if the player goes back and forth in the area)
 		if not victory_song.playing:
-			# stop the global music track
+			# victory effects
+			body.set_light_visibility(false)
+			canvas_modulate.color = Color(1, 1, 1)  # Return to normal
+			canvas_modulate.visible = false
 			Music.stop()
-			#play the victory sound
 			victory_song.play()
-	
+			
+			#wait for victory song to finish playing
+			get_tree().create_timer(4.0).timeout
+			
+			
