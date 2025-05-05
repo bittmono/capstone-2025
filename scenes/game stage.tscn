@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=4 uid="uid://bt3ln3k2vtwjr"]
+[gd_scene load_steps=45 format=4 uid="uid://bt3ln3k2vtwjr"]
 
 [ext_resource type="Texture2D" uid="uid://e4dj1j2ocag5" path="res://assets/backgrounds (clouds)/babyblue/1.png" id="1_1nwv5"]
 [ext_resource type="Script" path="res://scripts/game_stage.gd" id="1_3dbju"]
@@ -25,13 +25,14 @@
 [ext_resource type="PackedScene" uid="uid://bfwjxcy8idld8" path="res://scenes/stage four resources/ice area.tscn" id="28_8jrcg"]
 [ext_resource type="PackedScene" uid="uid://t46mlqw6mk3h" path="res://scenes/stage four resources/icicle_basic.tscn" id="29_1q5pu"]
 [ext_resource type="PackedScene" uid="uid://i8ntsxpimlcw" path="res://scenes/stage four resources/falling_icicle.tscn" id="29_6xa63"]
-[ext_resource type="PackedScene" uid="uid://x6ck7khwhemq" path="res://scenes/slime.tscn" id="29_8mucs"]
+[ext_resource type="PackedScene" uid="uid://x6ck7khwhemq" path="res://scenes/death_slime.tscn" id="29_8mucs"]
 [ext_resource type="PackedScene" uid="uid://di3rlyyq0yn0r" path="res://scenes/bouncing_slime_dupe.tscn" id="29_ct1vh"]
-[ext_resource type="PackedScene" uid="uid://bkn7wfy8ekqlx" path="res://scenes/stage two resources/falling_spike_fixed.tscn" id="29_ywqw5"]
+[ext_resource type="PackedScene" uid="uid://bkn7wfy8ekqlx" path="res://scenes/falling_spike.tscn" id="29_ywqw5"]
 [ext_resource type="PackedScene" uid="uid://dikaqkgwa4gur" path="res://scenes/UI related/pause_menu.tscn" id="30_5kf4s"]
 [ext_resource type="PackedScene" uid="uid://ckpwdlmn4axxd" path="res://scenes/stage two resources/spike_basic.tscn" id="30_5vlxh"]
-[ext_resource type="PackedScene" uid="uid://0srpvg8u2ftu" path="res://scenes/stage 5/victory_trigger.tscn" id="33_5lk3g"]
 [ext_resource type="PackedScene" uid="uid://cconua6dcpkbq" path="res://scenes/stage two resources/appearing_spike_fixed.tscn" id="33_vlp87"]
+[ext_resource type="FontFile" uid="uid://drbfa0ogtpv66" path="res://assets/fonts/Stacked pixel.ttf" id="34_2p864"]
+[ext_resource type="PackedScene" uid="uid://b2tmjdw1y61dl" path="res://scenes/victory_trigger.tscn" id="34_4of50"]
 [ext_resource type="Script" path="res://scripts/stone area.gd" id="35_7xqfv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vjm5p"]
@@ -886,10 +887,6 @@ scale = Vector2(5.417, 4.48762)
 
 [node name="Stage Five - Obstacles" type="Node2D" parent="Obstacles"]
 
-[node name="victory_trigger" parent="Obstacles/Stage Five - Obstacles" instance=ExtResource("33_5lk3g")]
-position = Vector2(-7, -3952)
-scale = Vector2(2.30127, 2.48966)
-
 [node name="FallingSpike" parent="Obstacles/Stage Five - Obstacles" instance=ExtResource("29_ywqw5")]
 position = Vector2(224, -2879)
 scale = Vector2(0.978763, 1)
@@ -1013,7 +1010,7 @@ position = Vector2(-230, -3077)
 position = Vector2(-294, -3159)
 
 [node name="Player" parent="." instance=ExtResource("8_ixqjo")]
-position = Vector2(146, -2693)
+position = Vector2(-90, 73)
 scale = Vector2(0.522512, 0.522512)
 collision_layer = 3
 collision_mask = 1
@@ -1056,12 +1053,30 @@ scale = Vector2(0.978763, 1)
 script = ExtResource("35_7xqfv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="stone"]
-position = Vector2(-406.636, -308)
+position = Vector2(-486.328, -684)
 shape = SubResource("RectangleShape2D_0weth")
 debug_color = Color(0.65098, 0, 0.188235, 0.109804)
 
-[node name="VictoryTrigger" parent="stone" instance=ExtResource("32_44br2")]
-position = Vector2(-431.156, -773)
+[node name="VictoryTrigger" parent="stone" instance=ExtResource("34_4of50")]
+position = Vector2(-432.178, -775)
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+
+[node name="TimerLabel" type="Label" parent="UILayer"]
+anchors_preset = -1
+anchor_left = 0.421007
+anchor_right = 0.578993
+anchor_bottom = 0.0401235
+offset_top = 11.0
+offset_bottom = 11.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("34_2p864")
+theme_override_font_sizes/font_size = 32
+text = "\"Timer: 0:00\""
+horizontal_alignment = 1
 
 [connection signal="body_entered" from="stone" to="stone" method="_on_body_entered"]
 [connection signal="body_exited" from="stone" to="stone" method="_on_body_exited"]
