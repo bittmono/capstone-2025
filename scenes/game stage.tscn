@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=4 uid="uid://bt3ln3k2vtwjr"]
+[gd_scene load_steps=45 format=4 uid="uid://bt3ln3k2vtwjr"]
 
 [ext_resource type="Texture2D" uid="uid://e4dj1j2ocag5" path="res://assets/backgrounds (clouds)/babyblue/1.png" id="1_1nwv5"]
 [ext_resource type="Script" path="res://scripts/game_stage.gd" id="1_3dbju"]
@@ -32,6 +32,7 @@
 [ext_resource type="PackedScene" uid="uid://bkn7wfy8ekqlx" path="res://scenes/falling_spike.tscn" id="31_w7k8b"]
 [ext_resource type="PackedScene" uid="uid://0srpvg8u2ftu" path="res://scenes/stage 5/victory_trigger.tscn" id="33_5lk3g"]
 [ext_resource type="PackedScene" uid="uid://cconua6dcpkbq" path="res://scenes/stage two resources/appearing_spike_fixed.tscn" id="33_vlp87"]
+[ext_resource type="FontFile" uid="uid://drbfa0ogtpv66" path="res://assets/fonts/Stacked pixel.ttf" id="34_ftv5t"]
 [ext_resource type="Script" path="res://scripts/stone area.gd" id="35_7xqfv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vjm5p"]
@@ -285,6 +286,23 @@ size = Vector2(828.597, 1459)
 [node name="Game" type="Node2D"]
 position = Vector2(2, 0)
 script = ExtResource("1_3dbju")
+
+[node name="VictoryMessage" type="RichTextLabel" parent="."]
+visible = false
+offset_left = -108.0
+offset_top = -3985.0
+offset_right = 96.0
+offset_bottom = -3908.0
+size_flags_horizontal = 4
+theme_override_constants/table_v_separation = 10
+theme_override_constants/outline_size = 10
+theme_override_constants/line_separation = 10
+theme_override_fonts/normal_font = ExtResource("34_ftv5t")
+bbcode_enabled = true
+text = "
+[center] Congratulations and 
+[center] Thanks for playing!"
+scroll_active = false
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 editor_description = "when making changes in the editor, toggle vision ON
@@ -1089,6 +1107,23 @@ visible = false
 position = Vector2(-437.287, -337)
 shape = SubResource("RectangleShape2D_0weth")
 debug_color = Color(0.65098, 0, 0.188235, 0.109804)
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="UILayer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 7.0
+offset_bottom = 33.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("34_ftv5t")
+theme_override_font_sizes/font_size = 32
+text = "\"Timer: 0:00\""
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="body_entered" from="stone" to="stone" method="_on_body_entered"]
 [connection signal="body_exited" from="stone" to="stone" method="_on_body_exited"]

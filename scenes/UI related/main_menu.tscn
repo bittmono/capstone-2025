@@ -60,7 +60,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_ecpfs")
 
-[node name="Label" type="Label" parent="."]
+[node name="Title" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -114,6 +114,7 @@ theme_override_constants/h_separation = 30
 theme_override_fonts/font = ExtResource("6_uypv7")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_nnweo")
+action_mode = 0
 text = "Credits"
 
 [node name="Quit" type="Button" parent="VBoxContainer"]
@@ -126,6 +127,73 @@ theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_nnweo")
 text = "Quit"
 
+[node name="Credits" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextEdit" type="TextEdit" parent="Credits"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -576.0
+offset_top = 133.0
+offset_right = 580.0
+offset_bottom = -118.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("6_uypv7")
+theme_override_font_sizes/font_size = 31
+text = "Project Manager: Mitchell Flewelling  
+Game Designer: Kaleb Currier 
+Lead Developer: Amy Chiem 
+Quality Assurance Lead: Lucas Roberts 
+
+--Assets Used--
+
+Tileset edited and repackaged by Brackeys: 
+https://brackeysgames.itch.io/brackeys-platformer-bundle
+original: 
+https://rottingpixels.itch.io/
+https://kevins-moms-house.itch.io/
+
+Backgrounds: 
+https://free-game-assets.itch.io/free-sky-with-clouds-background-pixel-art-set
+Hooded Protagonist --- https://penzilla.itch.io/hooded-protagonist
+Spikes --- https://omniclause.itch.io/spikes 
+Icicles --- https://kamioo.itch.io/pixel-icicles
+Fireworks --- https://stealthix.itch.io/animated-fireworks
+
+Font --- https://monkopus.itch.io/stacked-pixel
+Victory SFX --- https://pixabay.com/sound-effects/winsquare-6993/
+Music, Jump, and Death SFX: 
+https://brackeysgames.itch.io/brackeys-platformer-bundle"
+scroll_smooth = true
+
+[node name="Return Button" type="Button" parent="Credits"]
+layout_mode = 0
+offset_left = 1008.0
+offset_top = 135.0
+offset_right = 1136.0
+offset_bottom = 181.0
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("6_uypv7")
+theme_override_font_sizes/font_size = 40
+action_mode = 0
+text = "Back"
+
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="VBoxContainer/Credits" to="Title" method="hide"]
+[connection signal="pressed" from="VBoxContainer/Credits" to="VBoxContainer" method="hide"]
+[connection signal="pressed" from="VBoxContainer/Credits" to="Credits" method="show"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Credits/Return Button" to="Title" method="show"]
+[connection signal="pressed" from="Credits/Return Button" to="VBoxContainer" method="show"]
+[connection signal="pressed" from="Credits/Return Button" to="Credits" method="hide"]
