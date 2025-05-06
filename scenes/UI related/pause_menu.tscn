@@ -13,10 +13,15 @@ process_mode = 3
 script = ExtResource("1_1aeem")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 486.0
-offset_top = 80.0
-offset_right = 661.0
-offset_bottom = 138.0
+anchors_preset = -1
+anchor_left = 0.422
+anchor_top = 0.123
+anchor_right = 0.574
+anchor_bottom = 0.213
+offset_left = -0.144012
+offset_top = 0.295998
+offset_right = -0.247986
+offset_bottom = -0.0240021
 size_flags_horizontal = 4
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 40
@@ -27,8 +32,17 @@ label_settings = SubResource("LabelSettings_netgj")
 horizontal_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-offset_right = 1152.0
-offset_bottom = 648.0
+anchors_preset = -1
+anchor_left = 0.422
+anchor_top = 0.34
+anchor_right = 0.573
+anchor_bottom = 0.65
+offset_left = -486.144
+offset_top = -220.32
+offset_right = 491.904
+offset_bottom = 226.8
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/separation = 30
 alignment = 1
 
@@ -62,15 +76,14 @@ text = "Quit"
 [node name="Settings" type="Control" parent="."]
 visible = false
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -131.5
-offset_top = -181.0
-offset_right = 131.5
-offset_bottom = 181.0
+anchor_left = 0.386
+anchor_top = 0.221
+anchor_right = 0.614
+anchor_bottom = 0.779
+offset_left = -0.171997
+offset_top = -0.208008
+offset_right = 0.171997
+offset_bottom = 0.207977
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -86,10 +99,13 @@ color = Color(0, 0, 0, 0.698039)
 
 [node name="Label2" type="Label" parent="Settings"]
 layout_mode = 2
+anchor_top = -0.185
+anchor_right = 1.0
+anchor_bottom = -0.025
 offset_left = 1.5
-offset_top = -67.0
-offset_right = 264.5
-offset_bottom = -9.0
+offset_top = -0.0299988
+offset_right = 1.5
+offset_bottom = 0.0500002
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 40
@@ -102,15 +118,15 @@ horizontal_alignment = 1
 
 [node name="Master" type="Label" parent="Settings"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -463.0
-offset_top = -134.0
-offset_right = -200.0
-offset_bottom = -101.0
+anchors_preset = -1
+anchor_left = -1.26
+anchor_top = 0.13
+anchor_right = -0.26
+anchor_bottom = 0.221
+offset_left = -0.119965
+offset_top = -0.0600052
+offset_right = -0.119995
+offset_bottom = -0.00200653
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/outline_size = 30
@@ -122,15 +138,15 @@ horizontal_alignment = 1
 
 [node name="Music" type="Label" parent="Settings"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -466.0
-offset_top = -56.0
-offset_right = -203.0
-offset_bottom = -31.0
+anchors_preset = -1
+anchor_left = -1.272
+anchor_top = 0.334
+anchor_right = -0.272
+anchor_bottom = 0.425
+offset_left = 0.0360107
+offset_top = 4.092
+offset_right = 0.0360031
+offset_bottom = -3.85001
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/outline_size = 30
@@ -142,10 +158,14 @@ horizontal_alignment = 1
 
 [node name="SFX" type="Label" parent="Settings"]
 layout_mode = 2
-offset_left = -321.5
-offset_top = 191.0
-offset_right = -58.5
-offset_bottom = 224.0
+anchor_left = -1.222
+anchor_top = 0.528
+anchor_right = -0.222
+anchor_bottom = 0.619
+offset_left = -0.114014
+offset_top = -0.136002
+offset_right = -0.113995
+offset_bottom = -0.0780029
 theme_override_constants/outline_size = 30
 theme_override_fonts/font = ExtResource("2_v3x6t")
 theme_override_font_sizes/font_size = 40
@@ -155,36 +175,47 @@ horizontal_alignment = 1
 
 [node name="master slider" type="HSlider" parent="Settings"]
 layout_mode = 2
+anchor_top = 0.144
+anchor_right = 1.0
+anchor_bottom = 0.188
 offset_left = 0.5
-offset_top = 52.0
-offset_right = 263.5
-offset_bottom = 68.0
+offset_top = -0.128002
+offset_right = 0.5
+offset_bottom = -0.0559998
 max_value = 1.0
 step = 0.001
 
 [node name="music slider" type="HSlider" parent="Settings"]
 layout_mode = 2
+anchor_top = 0.354
+anchor_right = 1.0
+anchor_bottom = 0.398
 offset_left = 0.5
-offset_top = 128.0
-offset_right = 263.5
-offset_bottom = 144.0
+offset_top = -0.147995
+offset_right = 0.5
+offset_bottom = -0.076004
 max_value = 1.0
 step = 0.001
 
 [node name="sfx slider" type="HSlider" parent="Settings"]
 layout_mode = 2
+anchor_top = 0.552
+anchor_right = 1.0
+anchor_bottom = 0.597
 offset_left = 0.5
-offset_top = 200.0
-offset_right = 263.5
-offset_bottom = 216.0
+offset_top = 0.17598
+offset_right = 0.5
+offset_bottom = -0.113998
 max_value = 1.0
 step = 0.001
 
 [node name="Back" type="Button" parent="Settings"]
 layout_mode = 2
-offset_top = 290.0
-offset_right = 263.0
-offset_bottom = 335.0
+anchor_top = 0.801
+anchor_right = 1.0
+anchor_bottom = 0.925
+offset_top = 0.0379639
+offset_bottom = 0.149963
 theme_override_fonts/font = ExtResource("2_v3x6t")
 theme_override_font_sizes/font_size = 45
 action_mode = 0

@@ -9,8 +9,6 @@ var timer_running := false
 @onready var pause_menu = $"Pause Menu"
 @onready var victory_trigger = $"Obstacles/Stage Five - Obstacles/victory_trigger"
 
-
-
 func _ready():
 	$CanvasModulate.color = Color(1, 1, 1) 
 	start_timer()
