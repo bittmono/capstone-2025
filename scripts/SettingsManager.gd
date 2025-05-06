@@ -1,9 +1,9 @@
 extends Node
 
 # Default values
-var master_volume: float = 0.7
-var music_volume: float = 0.7
-var sfx_volume: float = 0.7
+var master_volume: float = 0.6
+var music_volume: float = 0.6
+var sfx_volume: float = 0.6
 
 func _ready():
 	load_settings()

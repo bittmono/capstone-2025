@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=4 uid="uid://bt3ln3k2vtwjr"]
+[gd_scene load_steps=46 format=4 uid="uid://bt3ln3k2vtwjr"]
 
 [ext_resource type="Texture2D" uid="uid://e4dj1j2ocag5" path="res://assets/backgrounds (clouds)/babyblue/1.png" id="1_1nwv5"]
 [ext_resource type="Script" path="res://scripts/game_stage.gd" id="1_3dbju"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://daogq3q004kx5" path="res://scenes/stage one resources/death_mushroom.tscn" id="14_bqdra"]
 [ext_resource type="PackedScene" uid="uid://dt37jin73f5af" path="res://scenes/stage one resources/regular_platform.tscn" id="15_0s06j"]
 [ext_resource type="PackedScene" uid="uid://baa0i0rdrtjh" path="res://scenes/stage three resources/platform yellow.tscn" id="23_vsnwo"]
+[ext_resource type="PackedScene" uid="uid://bkn7wfy8ekqlx" path="res://scenes/stage two resources/falling_spike_fixed2.tscn" id="23_vx573"]
 [ext_resource type="PackedScene" uid="uid://bfwjxcy8idld8" path="res://scenes/stage four resources/ice area.tscn" id="28_8jrcg"]
 [ext_resource type="PackedScene" uid="uid://t46mlqw6mk3h" path="res://scenes/stage four resources/icicle_basic.tscn" id="29_1q5pu"]
 [ext_resource type="PackedScene" uid="uid://i8ntsxpimlcw" path="res://scenes/stage four resources/falling_icicle.tscn" id="29_6xa63"]
@@ -712,11 +713,11 @@ position = Vector2(41, -848)
 [node name="FallingSpike" parent="Obstacles/Stage Two - Obstacles" instance=ExtResource("31_w7k8b")]
 position = Vector2(-151, -1199)
 
-[node name="FallingSpike2" parent="Obstacles/Stage Two - Obstacles" instance=ExtResource("31_w7k8b")]
-position = Vector2(89, -1215)
-
 [node name="FallingSpike4" parent="Obstacles/Stage Two - Obstacles" instance=ExtResource("31_w7k8b")]
 position = Vector2(185, -847)
+
+[node name="FallingSpike2" parent="Obstacles/Stage Two - Obstacles" instance=ExtResource("23_vx573")]
+position = Vector2(89, -1215)
 
 [node name="appearing_spike_fixed" parent="Obstacles/Stage Two - Obstacles" instance=ExtResource("33_vlp87")]
 position = Vector2(-103, -444)
@@ -913,7 +914,7 @@ position = Vector2(108, -2959)
 scale = Vector2(0.978763, 1)
 
 [node name="FallingSpike3" parent="Obstacles/Stage Five - Obstacles" instance=ExtResource("31_w7k8b")]
-position = Vector2(-240, -2911)
+position = Vector2(-233, -2911)
 
 [node name="FallingSpike4" parent="Obstacles/Stage Five - Obstacles" instance=ExtResource("31_w7k8b")]
 position = Vector2(-99, -3135)
@@ -1051,7 +1052,7 @@ position = Vector2(-102, -3205)
 position = Vector2(-118, -3318)
 
 [node name="Player" parent="." instance=ExtResource("8_ixqjo")]
-position = Vector2(-240, 71)
+position = Vector2(-232, 68)
 scale = Vector2(0.522512, 0.522512)
 collision_layer = 3
 collision_mask = 1
