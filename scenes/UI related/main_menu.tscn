@@ -178,11 +178,17 @@ https://brackeysgames.itch.io/brackeys-platformer-bundle"
 scroll_smooth = true
 
 [node name="Return Button" type="Button" parent="Credits"]
-layout_mode = 0
-offset_left = 1008.0
-offset_top = 135.0
-offset_right = 1136.0
-offset_bottom = 181.0
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -46.0
+offset_right = 64.0
+grow_horizontal = 2
+grow_vertical = 0
 theme_override_constants/outline_size = 30
 theme_override_fonts/font = ExtResource("6_uypv7")
 theme_override_font_sizes/font_size = 40

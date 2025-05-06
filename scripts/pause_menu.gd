@@ -19,7 +19,7 @@ func _ready():
 	music_slider.value = SettingsManager.music_volume
 	sfx_slider.value = SettingsManager.sfx_volume
 	
-	# Connect signals
+	# Connect signals 
 	master_slider.value_changed.connect(_on_master_changed)
 	music_slider.value_changed.connect(_on_music_changed)
 	sfx_slider.value_changed.connect(_on_sfx_changed)
@@ -55,9 +55,10 @@ func _on_sfx_changed(value: float):
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("paused"):
 		if is_paused:
-			resume()
-		else:
+			resume() 
+		else: 
 			pause()
+		get_tree().root.set_input_as_handled() 
 
 func _on_resume_pressed() -> void:
 	resume()

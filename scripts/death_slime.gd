@@ -14,19 +14,23 @@ var triggered = false # boolean trigger
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+# Check if right-facing raycast is colliding with something
 	if ray_cast_right.is_colliding():
-		var collider = ray_cast_right.get_collider() 
+		# Get the object the raycast hit
+		var collider = ray_cast_right.get_collider()
+		# IF player is not the collider, switch direction
 		if not collider.is_in_group("Player"):
-			direction = -1 #colliding right, move left
-			animated_sprite_2d.flip_h = true
+				direction = -1 #colliding right, move left
+		animated_sprite_2d.flip_h = true
+		# Check if the left-facing raycast colliding with something 
 	if ray_cast_left.is_colliding():
+	# Get the object the raycast hit
 		var collider = ray_cast_left.get_collider()
 		if not collider.is_in_group("Player"):
 			direction = 1 #colliding left, move right
 			animated_sprite_2d.flip_h = false 
-	
+
 	position.x += direction * SPEED * delta
-	
 
 # Death animation plays when player interacts with enemy
 func _on_killzone_body_entered(body: Node2D) -> void:
