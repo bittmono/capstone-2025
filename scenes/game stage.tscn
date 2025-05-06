@@ -834,7 +834,7 @@ position = Vector2(-215, -2429)
 position = Vector2(153, -2589)
 
 [node name="FallingIcicle10" parent="Obstacles/Stage Four - Obstacles" instance=ExtResource("29_6xa63")]
-position = Vector2(185, -2540)
+position = Vector2(185, -2541)
 
 [node name="FallingIcicle11" parent="Obstacles/Stage Four - Obstacles" instance=ExtResource("29_6xa63")]
 position = Vector2(216, -2462)
@@ -871,7 +871,7 @@ position = Vector2(-23, -2408)
 scale = Vector2(2.32731, 11.3369)
 
 [node name="IcicleBasic7" parent="Obstacles/Stage Four - Obstacles" instance=ExtResource("29_1q5pu")]
-position = Vector2(-213, -2472)
+position = Vector2(-214, -2471)
 
 [node name="IcicleBasic8" parent="Obstacles/Stage Four - Obstacles" instance=ExtResource("29_1q5pu")]
 position = Vector2(-262, -2134)
@@ -931,7 +931,7 @@ position = Vector2(40, -3454)
 position = Vector2(172, -3503)
 
 [node name="FallingSpike9" parent="Obstacles/Stage Five - Obstacles" instance=ExtResource("31_w7k8b")]
-position = Vector2(259, -3550)
+position = Vector2(243, -3550)
 
 [node name="FallingSpike10" parent="Obstacles/Stage Five - Obstacles" instance=ExtResource("31_w7k8b")]
 position = Vector2(282, -3550)
@@ -943,7 +943,7 @@ position = Vector2(-66, -3550)
 position = Vector2(-115, -3487)
 
 [node name="FallingSpike13" parent="Obstacles/Stage Five - Obstacles" instance=ExtResource("31_w7k8b")]
-position = Vector2(-262, -3703)
+position = Vector2(-276, -3703)
 
 [node name="FallingSpike14" parent="Obstacles/Stage Five - Obstacles" instance=ExtResource("31_w7k8b")]
 position = Vector2(-238, -3703)
@@ -1051,7 +1051,7 @@ position = Vector2(-102, -3205)
 position = Vector2(-118, -3318)
 
 [node name="Player" parent="." instance=ExtResource("8_ixqjo")]
-position = Vector2(-37, -1453)
+position = Vector2(-240, 71)
 scale = Vector2(0.522512, 0.522512)
 collision_layer = 3
 collision_mask = 1
